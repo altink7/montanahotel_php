@@ -1,0 +1,185 @@
+.Banner {
+    background-image: url('img/banner.png');
+    height: 80vh;
+    background-size: cover;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    font-size: 50px;
+    padding-top: 25%;
+}
+
+body {
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+footer {
+    position: relative;
+    margin-top: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    width: 100%;
+    background-color: black;
+
+}
+
+footer ul {
+    padding-left: 0px;
+    text-align: center;
+    color: white;
+}
+
+footer ul li {
+    font-weight: 350;
+    list-style: none;
+    display: inline;
+    margin: 2%;
+    padding: 1%;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
+  }
+
+footer ul li a:hover {
+    color: white;
+    text-decoration: underline 2px;
+  }
+
+.pool {
+    width:100%;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    font-size: 100%;
+}
+
+.poolimg {
+    width:100%;
+    margin-top: 60px;
+    padding-right: 80px;
+    padding-left: 10%;
+}
+
+.food{
+    width:100%;
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    font-size: 100%;
+}
+
+.foodimg{
+    width:100%;
+    margin-top: 60px;
+    padding-left: 80px;
+    padding-right: 10%;
+}
+
+.julian{
+    align-items: center;
+    display: center;
+    justify-content:center;
+    text-align: center;
+    font-size: 25px;
+}   
+
+.julianimg{
+    margin-top: 60px;
+    padding-left: 80px;
+}
+
+.altin{
+    align-items: center;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    font-size: 25px;
+    
+}
+
+.altinimg{
+    margin-top: 60px;
+    padding-left: 90px;
+}
+
+.faq caption {
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    padding: 10px
+}
+
+.faq table {
+    border: 2px solid;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    padding: 5px;
+}
+
+.faq table tr {
+    padding: 5px;
+    border: 1px solid;
+}
+
+.impressum caption {
+    font-size: 25px;
+    padding: 5px;
+    margin: 15px;
+}
+
+.impressum table {
+    border: 1px solid;
+    left: 40px;
+    top: 200px;
+    font-family: Verdana;
+    font-size: 9pt;
+    font-weight: bold;
+}
+
+.impressum table tr td {
+    border: 1px solid;
+}
+
+.anmeldefenster {
+    align-items: center;
+    justify-content:center;
+    text-align: center;
+}
+
+.anmeldefenster input {
+    margin-bottom: 2%;
+}
+
+.map{
+    margin-top:100px;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: black !important;
+}
+
+.navbar-nav .nav-link{
+    color: white;
+    font-size: 20px;
+    margin-right: 30px;
+    margin-left: 30px;
+}
+
+.navbar-nav .nav-link.active{
+    color:white;
+    text-decoration: underline 3px;
+}
+
+.navbar-toggler{
+    background-color: white;
+}
+
+.nav-link:hover{
+    text-decoration:underline 2px;
+}

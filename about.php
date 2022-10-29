@@ -1,0 +1,40 @@
+<?php
+$page = basename($_SERVER['PHP_SELF'], '.php');
+include 'components/head.php';
+include 'components/nav.php';
+?>
+
+<header>
+    <!--Banner start-->
+    <div class="Banner">
+        <p>Über uns</p>
+    </div>
+    <!--Banner end-->
+
+</header>
+
+<body>
+    <!--Section 1 start-->
+    <section>
+        <div class="julian">
+            <figcaption>
+                <caption>Julian Hoffmann</caption>
+                <img class="julianimg" src="img/julian.jpg" width="230" height="150">
+
+            </figcaption>
+        </div>
+        <hr>
+        <div class="altin">
+            <figcaption>
+                <caption>Altin Kelmendi</caption>
+                <img class="altinimg" src="img/altin.png" width="230" height="150">
+            </figcaption>
+        </div>
+
+
+    </section>
+    <!--Section 1 end-->
+
+    <?php
+    include 'components/footer.php';
+    ?>
