@@ -2,15 +2,8 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
+include 'components/banner.php';
 ?>
-
-<header>
-    <!--Banner start-->
-    <div class="Banner">
-        <p>Restaurant</p>
-    </div>
-    <!--Banner end-->
-</header>
     <!--Section 1 start-->
     <section>
         <div class="pool">

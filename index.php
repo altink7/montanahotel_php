@@ -2,17 +2,8 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
+include 'components/banner.php';
 ?>
-
-<header>
-    <!--Banner start-->
-    <div class="Banner">
-        <p>Willkommen bei Montana!</p>
-    </div>
-    <!--Banner end-->
-
-</header>
-
     <!--Section pool start-->
     <div class="pool">
         <a> <img class="poolimg" src="img/pool.png"></a>
