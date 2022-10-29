@@ -6,6 +6,6 @@
             <li>Datenschutz</li>
             <p></p>
             <p>Copyright &copy Montana GmbH</p>
-            <li> <a href="index.html"> <img src="img/logo.png" width="80" height="70"></a> </li>
+            <li> <a href="index.php"> <img src="img/logo.png" width="80" height="70"></a> </li>
         </ul>
     </footer>

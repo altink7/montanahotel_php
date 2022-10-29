@@ -2,8 +2,7 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
-?>l="stylesheet" href="style.css">
-</head>
+?>
 
 <body>
     <header>

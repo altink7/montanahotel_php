@@ -4,7 +4,6 @@ include 'components/head.php';
 include 'components/nav.php';
 ?>
 
-
 <header>
     <!--Banner start-->
     <div class="Banner">
