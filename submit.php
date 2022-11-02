@@ -18,7 +18,7 @@ $dbname = 'montanadb';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 echo "Connection successful!" . "<bc>";
-$sql = "INSERT INTO user (fname, lname) VALUES ('$x', '$y')";
+$sql = "INSERT INTO kunde (name, email, country, address, password) VALUES ('$name', '$email','$country','$address','$password')";
 
 if($conn->query($sql) === TRUE){
  echo "New record created successfully";
