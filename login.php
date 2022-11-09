@@ -10,7 +10,7 @@ include 'components/banner.php';
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-            <form action="">
+            <form action="profil.php">
                 <label for="username">Username:</label> <br>
                 <input type="text" name="username" id="usernameInput">
                 <br>
