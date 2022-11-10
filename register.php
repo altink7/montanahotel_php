@@ -62,6 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="anmeldefenster">
             <form method="post" action="register.php">
+
+
                 <label for="name">Name:</label><br>
                 <input type="text" name="vorname" id="name" placeholder="John Doe"
                     pattern="^([\p{Lu}\p{Lt}]\p{Ll}+)\s([\p{Lu}\p{Lt}]\p{Ll}+)+$" size="20" autofocus="">
