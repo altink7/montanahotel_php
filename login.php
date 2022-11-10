@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['passwordError']="Password darf nicht leer sein!";
     }
     
+    header('Location: "profil.php"');  
 }
 
 ?>
@@ -28,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="anmeldefenster">
 
-            <form action="<?php echo(empty($errors)?"profil.php":""); ?>" method="post">
+            <form action="<?php echo(empty($errors)?"login.php":""); ?>" method="post">
                 <label for="username">Username:</label> <br>
                 <input type="text" name="username" id="usernameInput" required="">
                 <br>
