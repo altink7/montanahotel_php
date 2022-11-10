@@ -6,6 +6,8 @@ include 'components/banner.php';
 
 $errors = array();
 
+$password_1 = $password_2 = "";
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["vorname"])) {
@@ -32,8 +34,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['countryError']="Land darf nicht leer sein!";
     }
     
+    if (!empty($_POST["password"])) {
     $password_1= $_POST["password"];
+    }else{
+        $errors['passwordError']="Passwort darf nicht leer sein!";
+    }
+
+    if (!empty($_POST["passwordConfirmed"])) {
     $password_2= $_POST["passwordConfirmed"];
+    }else{
+        $errors['passwordConfirmedError']="bestätigter Passwort darf nicht leer sein!";
+    }
     
     if($password_1!=$password_2){
         $errors['passwordError']= "Passwörter müssen gleich sein!";
