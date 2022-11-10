@@ -18,14 +18,14 @@ include 'components/banner.php';
 				<h2 class="content-title">Mountain Sweet</h2>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
 				<ul class="list-group list-group-horizontal-sm">
-					<li class="list-group-item">42 m²</li>
-					<li class="list-group-item">King-size Bett</li>
+					<li class="list-group-item">45 m²</li>
+					<li class="list-group-item">Queen-size Bett</li>
 					<li class="list-group-item">Bad, WC, Safe, TV</li>
 				</ul>
 				<div class="content-footer">
 					<div class="row">
 						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 80 / Tag</span>
+						<span class="col-6 social text-end">€ 100 / Tag</span>
 					</div>
 				</div>
 			</div>
@@ -44,14 +44,14 @@ include 'components/banner.php';
 				<h2 class="content-title">Ozean Sweet</h2>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
 				<ul class="list-group list-group-horizontal-sm">
-					<li class="list-group-item">42 m²</li>
+					<li class="list-group-item">50 m²</li>
 					<li class="list-group-item">King-size Bett</li>
 					<li class="list-group-item">Bad, WC, Safe, TV</li>
 				</ul>
 				<div class="content-footer">
 					<div class="row">
 						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 80 / Tag</span>
+						<span class="col-6 social text-end">€ 120 / Tag</span>
 					</div>
 				</div>
 			</div>
@@ -70,14 +70,14 @@ include 'components/banner.php';
 				<h2 class="content-title">Deluxe Villa</h2>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
 				<ul class="list-group list-group-horizontal-sm">
-					<li class="list-group-item">42 m²</li>
-					<li class="list-group-item">King-size Bett</li>
-					<li class="list-group-item">Bad, WC, Safe, TV</li>
+					<li class="list-group-item">120 m²</li>
+					<li class="list-group-item">King-size Betten (3x)</li>
+					<li class="list-group-item">Bad, WC, Safe, TV, Pool</li>
 				</ul>
 				<div class="content-footer">
 					<div class="row">
 						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 80 / Tag</span>
+						<span class="col-6 social text-end">€ 300 / Tag</span>
 					</div>
 				</div>
 			</div>
@@ -97,14 +97,14 @@ include 'components/banner.php';
 				<h2 class="content-title">Ozean Villa</h2>
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
 				<ul class="list-group list-group-horizontal-sm">
-					<li class="list-group-item">42 m²</li>
-					<li class="list-group-item">King-size Bett</li>
-					<li class="list-group-item">Bad, WC, Safe, TV</li>
+					<li class="list-group-item">70 m²</li>
+					<li class="list-group-item">King-size Bett (2x)</li>
+					<li class="list-group-item">Bad, WC, Safe, TV, Pool</li>
 				</ul>
 				<div class="content-footer">
 					<div class="row">
 						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 80 / Tag</span>
+						<span class="col-6 social text-end">€ 200 / Tag</span>
 					</div>
 				</div>
 			</div>
