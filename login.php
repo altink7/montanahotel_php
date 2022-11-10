@@ -3,6 +3,23 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
+
+$errors = array();
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (!empty($_POST["username"])) {
+    $vorname = $_POST["username"];
+    }else{
+        $errors['usernameError']="Username darf nicht leer sein!";
+    }if (!empty($_POST["password"])) {
+    $password = $_POST["password"];
+    }else{
+        $errors['passwordError']="Password darf nicht leer sein!";
+    }
+    
+}
+
 ?>
 
     <section>
@@ -10,13 +27,24 @@ include 'components/banner.php';
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-            <form action="profil.php">
+
+            <form action="<?php echo(empty($errors)?"profil.php":""); ?>" method="post">
                 <label for="username">Username:</label> <br>
-                <input type="text" name="username" id="usernameInput">
+                <input type="text" name="username" id="usernameInput" required="">
                 <br>
-                <label for="passwort">Passwort:</label><br>
-                <input type="password" name="passwort" id="passwortInput">
+                <label for="password">Passwort:</label><br>
+                <input type="password" name="password" id="password" minlength="8" required>
                 <br>
+
+                <div class="errors" style= "color:red;">
+
+                <?php 
+               foreach($errors as $value){
+                echo $value ."<br>";
+                }
+                ?>
+
+                </div>
                 <input id="submitButton" type="submit" value="Anmelden">
 
             </form>

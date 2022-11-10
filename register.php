@@ -4,23 +4,39 @@ include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
 
-$password = false;
+$errors = array();
 
-echo "<pre>"; print_r($_POST); "</pre>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["vorname"])) {
-$vorname = $_POST["vorname"];
-    }if (!empty($_POST["email"])) {
-$email = $_POST["email"];
-    }if (!empty($_POST["adresse"])) {
-$adresse = $_POST["adresse"];
-    }if (!empty($_POST["euCountries"])) {
-$country = $_POST["euCountries"];
-    }if (!empty($_POST["password_1"])) {
-$password_1= $_POST["password_1"];
-    }if (!empty($_POST["password_2"])) {
-$password_2= $_POST["password_2"];
+    $vorname = $_POST["vorname"];
+    }else{
+        $errors['nameError']="Name darf nicht leer sein!";
+    }
+
+    if (!empty($_POST["email"])) {
+    $email = $_POST["email"];
+    }else{
+        $errors['emailError']="E-Mail darf nicht leer sein!";
+    }
+
+    if (!empty($_POST["adresse"])) {
+    $adresse = $_POST["adresse"];
+    }else{
+        $errors['addresseError']="Adresse darf nicht leer sein!";
+    }
+    
+    if (!empty($_POST["euCountries"])) {
+    $country = $_POST["euCountries"];
+    }else{
+        $errors['countryError']="Land darf nicht leer sein!";
+    }
+    
+    $password_1= $_POST["password"];
+    $password_2= $_POST["passwordConfirmed"];
+    
+    if($password_1!=$password_2){
+        $errors['passwordError']= "Passwörter müssen gleich sein!";
     }
 }
 ?>
@@ -30,9 +46,7 @@ $password_2= $_POST["password_2"];
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-
             <form action="" method="post">
-            
                 <label for="name">Name:</label><br>
                 <input type="text" name="vorname" id="name" placeholder="John Doe"
                     pattern="^([\p{Lu}\p{Lt}]\p{Ll}+)\s([\p{Lu}\p{Lt}]\p{Ll}+)+$" size="20" autofocus="" required="">
@@ -74,25 +88,22 @@ $password_2= $_POST["password_2"];
                 <label for="adresse">Wohnadresse:</label><br>
                 <input type="text" name="adresse" id="adresse" placeholder="Web Straße 12/1" required="">
                 <br>
-                <label for="password_1">Passwort:</label><br>
-                <input type="password" name="password_1" id="password_1" minlength="8" required>
+                <label for="password">Passwort:</label><br>
+                <input type="password" name="password" id="password" minlength="8" required>
                 <br>
-                <label for="password_2">Passwort bestätigen:</label><br>
-                <input type="password" name="password_2" id="password_2" minlength="8" required>
-                <?php
+                <label for="passwordConfirmed">Passwort bestätigen:</label><br>
+                <input type="password" name="passwordConfirmed" id="passwordConfirmed" minlength="8" required>
+                <br>
 
-                if($_POST["password_1"] == $_POST["password_2"]){
-                    echo("passt");
-                    $password = true;
-                }else {
-                    echo(" failed 😦");
-                 }
+                <div class="errors" style= "color:red;">
+                <?php 
+               foreach($errors as $value){
+                echo $value ."<br>";
+                }
                 ?>
-                <br>
+                </div>
+                <button type="submit">Submit</button>
 
-                <!-- <input id="submitButton" type="submit" value="Registrieren"> -->
-            
-                <button type=" <?php echo($_POST["password_1"] == $_POST["password_2"]?'submit':'button')?> ">Submit</button>
             </form>
         </div>
 
