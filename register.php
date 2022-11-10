@@ -38,6 +38,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($password_1!=$password_2){
         $errors['passwordError']= "Passwörter müssen gleich sein!";
     }
+
+    //if(empty($errors)){
+    //header('Location: profil.php'); 
+    //}
 }
 ?>
 
@@ -46,13 +50,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-            <form action="" method="post">
+            <form method="post" action="register.php">
                 <label for="name">Name:</label><br>
                 <input type="text" name="vorname" id="name" placeholder="John Doe"
-                    pattern="^([\p{Lu}\p{Lt}]\p{Ll}+)\s([\p{Lu}\p{Lt}]\p{Ll}+)+$" size="20" autofocus="" required="">
+                    pattern="^([\p{Lu}\p{Lt}]\p{Ll}+)\s([\p{Lu}\p{Lt}]\p{Ll}+)+$" size="20" autofocus="">
                 <br>
                 <label for="email">E-Mail-Adresse:</label><br>
-                <input type="email" name="email" id="email" placeholder="john.doe@gmail.com" required="">
+                <input type="email" name="email" id="email" placeholder="john.doe@gmail.com">
                 <br>
                 <label for="country">Land:</label><br>
                 <select name="euCountries" style="padding-left: 40px;margin-bottom: 25px;">
@@ -86,13 +90,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </select>
                 <br>
                 <label for="adresse">Wohnadresse:</label><br>
-                <input type="text" name="adresse" id="adresse" placeholder="Web Straße 12/1" required="">
+                <input type="text" name="adresse" id="adresse" placeholder="Web Straße 12/1">
                 <br>
                 <label for="password">Passwort:</label><br>
-                <input type="password" name="password" id="password" minlength="8" required>
+                <input type="password" name="password" id="password" minlength="8">
                 <br>
                 <label for="passwordConfirmed">Passwort bestätigen:</label><br>
-                <input type="password" name="passwordConfirmed" id="passwordConfirmed" minlength="8" required>
+                <input type="password" name="passwordConfirmed" id="passwordConfirmed" minlength="8">
                 <br>
 
                 <div class="errors" style= "color:red;">
