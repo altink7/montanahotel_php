@@ -7,12 +7,21 @@ include 'components/banner.php';
 session_start();
                 print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
                 print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht
-
-                //Hilfe bei der Implementierung -wird gelöscht
+                
+                $fehler1 = $fehler2= "";
                 if(!(empty($_GET["username"])&&empty($_GET["password"]))){
-                    $_SESSION["username"] = $_GET["username"];
-                    $_SESSION["password"] = $_GET["password"];
+                    if($_SESSION["password"] == $_GET["password"]){
+                        if($_GET["newPassword"]==$_GET["newPasswordConfirmed"]){
+                            $_SESSION["username"] = $_GET["username"];
+                            $_SESSION["password"] = $_GET["newPassword"];
+                        }else{
+                            $fehler1 = "das alte Passwort nicht korrekt";
+                        }
+                    }else{
+                        $fehler2 = "das alte Passwort ist nicht korrekt";
+                    }
                 }
+
 
 $logoutValue = empty($_GET["logout"])?false:$_GET["logout"];
 $changeValue = empty($_GET["change"])?false:$_GET["change"];
@@ -35,7 +44,7 @@ $errors = array();
             $errors['passwordError']="Password darf nicht leer sein!";
         }
 //Serverseitige Überprüfung von den eingegebenen Daten END
-        
+    
    
     if ( $_POST["username"] === "montanauser" && $_POST["password"] === "12345678") {
         $_SESSION["username"] = $_POST["username"];
@@ -96,15 +105,17 @@ $errors = array();
 
                             <?php if ($changeValue): ?>
                             <tr>
-                                <form action="login.php" method="put">
+                                <form  method="put" action="login.php">
                                         <th scope=row>New</th>
                                     <td>
                                         <input type="text" name="username" id="usernameInput" >
                                     </td>
                                     <td>
                                         <input type="password" name="password" id="password" minlength="8" placeholder="altes Passwort"> <br>
-                                        <input type="newPassword" name="newPassword" id="newPassword" minlength="8" placeholder="neues Passwort"> <br>
-                                        <input type="newPasswordConfirmed" name="newPasswordConfirmed" id="newPasswordConfirmed" minlength="8" placeholder="Passwort bestätigen">
+                                        <input type="password" name="newPassword" id="newPassword" minlength="8" placeholder="neues Passwort"> <br>
+                                        <input type="password" name="newPasswordConfirmed" id="newPasswordConfirmed" minlength="8" placeholder="Passwort bestätigen">
+                                        <br>
+                                        <?php echo $fehler1."<br> sss".$fehler2;?>
                                     </td>
                                     <td> <button type="submit">Submit</button> </td>
                                 </form>
