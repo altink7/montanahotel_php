@@ -84,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <th scope=row>1</th>
                             <td><?php echo $_SESSION["username"]?></td>
                             <td><?php echo str_repeat("&bull;", strlen($_SESSION["password"]))?> </td>
-                            <td><a class="btn btn-primary" href="?change=true">Daten ändern</a> </td>".
+                            <td><a class="btn btn-primary" href="?change=true">Daten ändern</a> </td>
                             </tr>
                     </tbody>
                 </table>
