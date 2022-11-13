@@ -5,47 +5,53 @@ include 'components/nav.php';
 include 'components/banner.php';
 
 session_start();
-print_r($_GET);
-print_r($_POST);
+                print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
+                print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht
+
+                //Hilfe bei der Implementierung -wird gelöscht
+                if(!(empty($_GET["username"])&&empty($_GET["password"]))){
+                    $_SESSION["username"] = $_GET["username"];
+                    $_SESSION["password"] = $_GET["password"];
+                }
 
 $logoutValue = empty($_GET["logout"])?false:$_GET["logout"];
 $changeValue = empty($_GET["change"])?false:$_GET["change"];
 
-if($logoutValue){
+    if($logoutValue){
          session_destroy();
          header('Location: login.php'); 
-     }
-//Serverseitige Überprüfung von den eingegebenen Daten
+    }
+
+//Serverseitige Überprüfung von den eingegebenen Daten START 
 $errors = array();
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (!empty($_POST["username"])) {
-    $vorname = $_POST["username"];
-    }else{
-        $errors['usernameError']="Username darf nicht leer sein!";
-    }if (!empty($_POST["password"])) {
-    $password = $_POST["password"];
-    }else{
-        $errors['passwordError']="Password darf nicht leer sein!";
-    }
-
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!empty($_POST["username"])) {
+            $vorname = $_POST["username"];
+        }else{
+            $errors['usernameError']="Username darf nicht leer sein!";
+        }if (!empty($_POST["password"])) {
+            $password = $_POST["password"];
+        }else{
+            $errors['passwordError']="Password darf nicht leer sein!";
+        }
+//Serverseitige Überprüfung von den eingegebenen Daten END
+        
+   
     if ( $_POST["username"] === "montanauser" && $_POST["password"] === "12345678") {
-    $_SESSION["username"] = $_POST["username"];
-    $_SESSION["password"] = $_POST["password"];
+        $_SESSION["username"] = $_POST["username"];
+        $_SESSION["password"] = $_POST["password"];
     }
-
+ 
 }
 
 ?>
 
     <section>
-
-        <img src="Bilder/section.jpeg" alt="">
-
-
         <div class="anmeldefenster">
 
         <?php if (!isset($_SESSION["username"])): ?>
 
+    <!-- Login Data Eingabe - POST  Start-->
             <form method="post" action="login.php">
                 <label for="username">Username:</label> <br>
                 <input type="text" name="username" id="usernameInput" >
@@ -54,17 +60,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="password" name="password" id="password" minlength="8">
                 <br>
 
-                <!--Errors START-->
+        <!--Errors START-->
                 <div class="errors" style= "color:red;">
                 <?php foreach($errors as $value){ echo $value ."<br>"; } ?> 
                 </div>
-                <!--Errors END-->
+        <!--Errors END-->
 
                 <input id="submitButton" type="submit" value="Anmelden">
 
                <p>Noch nicht registriert?</p>
             <a id="submitButton" class="register" href="register.php"><input type="button" value="Registrieren"></a> 
             </form>
+    <!-- Login Data Eingabe - POST  End-->
 
             <?php else: ?>
                 <h2>
@@ -86,6 +93,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <td><?php echo str_repeat("&bull;", strlen($_SESSION["password"]))?> </td>
                             <td><a class="btn btn-primary" href="?change=true">Daten ändern</a> </td>
                             </tr>
+
+                            <?php if ($changeValue): ?>
+                            <tr>
+                                <form action="login.php" method="put">
+                                        <th scope=row>New</th>
+                                    <td>
+                                        <input type="text" name="username" id="usernameInput" >
+                                    </td>
+                                    <td>
+                                        <input type="password" name="password" id="password" minlength="8">
+                                    </td>
+                                    <td> <button type="submit">Submit</button> </td>
+                                </form>
+                                    </tr>
+
+                            <?php endif ?>
                     </tbody>
                 </table>
                 
@@ -93,10 +116,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <a class="btn btn-primary"  style= "margin-top:30px;"href="?logout=true">Logout</a>
                 
             <?php endif ?>
-
         </div>
-
-
     </section>
     
     <?php
