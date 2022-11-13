@@ -102,7 +102,9 @@ $errors = array();
                                         <input type="text" name="username" id="usernameInput" >
                                     </td>
                                     <td>
-                                        <input type="password" name="password" id="password" minlength="8">
+                                        <input type="password" name="password" id="password" minlength="8" placeholder="altes Passwort"> <br>
+                                        <input type="newPassword" name="newPassword" id="newPassword" minlength="8" placeholder="neues Passwort"> <br>
+                                        <input type="newPasswordConfirmed" name="newPasswordConfirmed" id="newPasswordConfirmed" minlength="8" placeholder="Passwort bestätigen">
                                     </td>
                                     <td> <button type="submit">Submit</button> </td>
                                 </form>
