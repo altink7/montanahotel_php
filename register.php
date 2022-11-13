@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <option value="IE">Ireland</option>
                     <option value="IT">Italy</option>
                     <option value="LV">Latvia</option>
-                    <option value="LT">Lithuania</option>
+                    <option value="LT">Lithuania</option>                   
                     <option value="LU">Luxembourg</option>
                     <option value="MT">Malta</option>
                     <option value="NL">Netherlands</option>
