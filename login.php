@@ -15,7 +15,7 @@ session_start();
                             $_SESSION["username"] = $_GET["username"];
                             $_SESSION["password"] = $_GET["newPassword"];
                         }else{
-                            $fehler1 = "das alte Passwort nicht korrekt";
+                        $fehler1 = "die neuen Passwörter stimmen nicht überein";
                         }
                     }else{
                         $fehler2 = "das alte Passwort ist nicht korrekt";
@@ -115,7 +115,6 @@ $errors = array();
                                         <input type="password" name="newPassword" id="newPassword" minlength="8" placeholder="neues Passwort"> <br>
                                         <input type="password" name="newPasswordConfirmed" id="newPasswordConfirmed" minlength="8" placeholder="Passwort bestätigen">
                                         <br>
-                                        <?php echo $fehler1."<br> sss".$fehler2;?>
                                     </td>
                                     <td> <button type="submit">Submit</button> </td>
                                 </form>
@@ -124,7 +123,11 @@ $errors = array();
                             <?php endif ?>
                     </tbody>
                 </table>
-                
+
+                <div class="errors" style= "color:red;">
+                    <?php echo $fehler1."<br>".$fehler2;?> 
+                </div> 
+
                 <br>
                 <a class="btn btn-primary"  style= "margin-top:30px;"href="?logout=true">Logout</a>
                 
