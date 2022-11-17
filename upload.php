@@ -4,7 +4,7 @@
     //move the uploaded file to the uploads folder
     move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $_FILES['picture']['name']);
     //show the uploaded image
-    echo '<img src="uploads/' . $_FILES['picture']['name'] . '" />';
+    echo '<img src="upload/' . $_FILES['picture']['name'] . '" />';
 
    // check uploaded file
     if (isset($_FILES['picture'])) {
@@ -33,5 +33,29 @@
         }
     }
 
+    //open a directory, and read its contents
+    if (is_dir('upload/')){
+        if ($dh = opendir('upload/')){
+            while (($file = readdir($dh)) !== false){
+                echo " filename:" . $file . "<br>";
+
+                echo "<a href=\"upload/".$file."\">link zum klicken</a>";
+                
+            }
+            closedir($dh);
+        }
+    }
     
+
+
+    //show directory content
+    $dir = 'upload/';
+    $files = scandir($dir);
+    foreach($files as $file) {
+        if($file != '.' && $file != '..') {
+            echo '<img src="upload/' . $file . '" />';
+        }
+    }
+    
+
 ?>
