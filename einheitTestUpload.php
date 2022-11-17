@@ -4,7 +4,7 @@
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
   Select image to upload:
-  <input type="file" name="picture" id="picture">
+  <input type="file" name="picture" id="picture" accept="image/*">
   <input type="submit" value="Upload Image" name="submit">
 </form>
 
