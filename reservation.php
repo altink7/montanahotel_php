@@ -2,10 +2,10 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
-include 'components/banner.php';
+
 
 ?>
-
+<div class="bgReservation">
 <br><br><br>
     <div class="bf-container text-center">
         <div class="bf-body">
@@ -14,15 +14,15 @@ include 'components/banner.php';
             </div>
             <form class="bf-body-box" action="profil.php" method="post">
                 <div class="bf-row">
-                    <div class="bf-col-6">
+                    <div class="bf-col-lg-6">
                         <h4>Anreisedatum
                         <input type="date" name="from-date" id="from-date"></h4>
                     </div>
-                    <div class="bf-col-6">
+                    <div class="bf-col-lg-6">
                         <h4>Abreisedatum
                         <input type="date" name="to-date" id="to-date"></h4>
                     </div> <br>
-                    <div class="bf-col-6 h4">
+                    <div class="bf-col-lg-6 h4">
                         <select name="room-select">
                             <option class="rselect">Zimmer auswählen</option>
                             <option value="Mountain Sweet">Mountain Sweet</option>
@@ -41,20 +41,20 @@ include 'components/banner.php';
                     <label for="pets"> <h4>Haustiere?</h4></label><br><br>
                 </div>
                 <div class="bf-row">
-                    <div class="bf-col-12">
+                    <div class="bf-col-lg-12">
                         <h4>Anmerkungen</h4>
-                        <textarea name="messages" id="messages" cols="75" rows="5"></textarea>
+                        <textarea name="messages" id="messages" cols="45" rows="5"></textarea>
                     </div>
                 </div>
                 <div class="bf-row">
-                    <div class="bf-col-3">
+                    <div class="bf-col-lg-3">
                         <input type="submit" value="Buchen">
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    
+</div>
 <?php
 include 'components/footer.php';
 ?>

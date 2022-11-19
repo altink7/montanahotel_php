@@ -45,7 +45,7 @@ body {
 
 footer {
   position: relative;
-  margin-top: 5%;
+  
   padding-top: 3%;
   padding-bottom: 3%;
   width: 100%;
@@ -200,7 +200,7 @@ footer ul li a:hover {
 }
 .contact {
   color: white;
-  padding: 5%;
+  padding: 2%;
   max-width: 980px;
   margin: 0 auto;
   background-color: #5890b3;
@@ -213,4 +213,14 @@ footer ul li a:hover {
   margin: 0 auto;
   background-color: #5890b3;
 }
+.bgReservation{
+  background-image: url("img/banner.png");
+  height: 80vh;
+  background-size: cover;
+}
+.bgContact{
+  background-image: url("img/banner.png");
+  height: 80vh;
+  background-size: cover;
 
+}

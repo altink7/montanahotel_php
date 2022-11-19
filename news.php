@@ -12,34 +12,32 @@ $picture = $title = $text = "";
     //define post entrys
     $picture = $_FILES['picture']['name'];
     $title = $_POST['title'];
-    $text = $_POST['text'];
+    $text = $_POST['text'];  
 
 ?>
 
     <div class="Company-content">
-        <img <?php echo 'src="upload/' . $_FILES['picture']['name'] . '"'; ?> alt="IMAGE" width="200px" height="80px">
+        <img <?php echo 'src="upload/' . $_FILES['picture']['name'] . '"'; ?> alt="IMAGE" width="100px" height="80px">
         <h2><?php echo $title; ?></h2>
 
         <p><?php echo $text; ?>
         </p>
 
-    </div>
+</div>
 
     <style>
         .Company-content {
         padding: 20px;
         margin: 20px;
-        border-style: hidden;
-        border-radius: 11px;
         backface-visibility: visible;
-        background-color: rgb(4, 185, 185);
+        background-color: #5890b3;
         }
-
+   
         .Company-content img{
         float: left;
         padding: 1px;
         }
-
+    
         .Company-content a {
         text-decoration: none;
         color: darkblue;
@@ -55,7 +53,7 @@ $picture = $title = $text = "";
         }
 </style>
 
-   
+
     <?php
     include 'components/footer.php';
     ?>

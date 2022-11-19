@@ -5,6 +5,7 @@ include 'components/nav.php';
 include 'components/banner.php';
 ?>
 <!--Section pool start-->
+<br><br><br>
 <div class = "row"></div>
     <div class="row">
         <div class="col-lg-2"></div>
@@ -21,6 +22,7 @@ include 'components/banner.php';
         <div class="col-lg-1"></div>
     </div>
     <!--Section pool end-->
+    <br>
     <!--Section food start-->
     <div class="row">
         <div class="col-lg-2"></div>

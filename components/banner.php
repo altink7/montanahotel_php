@@ -25,7 +25,9 @@
                 echo('<p>Datenschutzerklärung</p>');
             }elseif($page =='reservation'){
                     echo('<p>Zimmer Buchen</p>');
-            }else{
+            }elseif($page =='news'){
+                echo('<p>News</p>');
+        }else{
                 echo('<p>Willkommen bei Montana!</p>');
             }
             ?>
