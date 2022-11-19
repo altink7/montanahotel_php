@@ -5,79 +5,97 @@ include 'components/nav.php';
 include 'components/banner.php';
 
 
-$fromdate = array();
-$todate = array();
-$zimmer = array();
-$breakfast = array();
-$parking = array();
-$pets = array();
+$fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
 
+//check if last element of array
 
-if(isset($_POST['from-date'])){
-    $fromdate[] = $_POST['from-date'];
-    $_SESSION['fromdate'] = $fromdate;
-}
-if(isset($_POST['to-date'])){
-    $todate[] = $_POST['to-date'];
-    $_SESSION['todate'] = $todate;
-}
+if (empty($_SESSION["fromdate"]) || end($_SESSION["fromdate"]) != $_POST['from-date']) {
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if(empty($_SESSION["fromdate"])){
+            $_SESSION["fromdate"] = array();
+            $_SESSION["fromdate"][] = $_POST['from-date'];
+        }else{
+            $_SESSION["fromdate"][] = $_POST['from-date'];
+        }
 
-if(isset($_POST['room-select'])){
-    $zimmer[] = $_POST['room-select'];
-    $_SESSION['room-select'] = $zimmer;
-}
+        if(empty($_SESSION["todate"])){
+            $_SESSION["todate"] = array();
+            $_SESSION["todate"][] = $_POST['to-date'];
+        }else{
+            $_SESSION["todate"][] = $_POST['to-date'];
+        }
 
-if(isset($_POST['breakfast'])){
-    $breakfast[] = "Ja";
-    $_SESSION['breakfast'] = $breakfast;
-}
-    else{
-        $breakfast[] = "Nein";
-        $_SESSION['breakfast'] = $breakfast;
+        if(empty($_SESSION["zimmer"])){
+            $_SESSION["zimmer"] = array();
+            $_SESSION["zimmer"][] = $_POST['room-select'];
+        }else{
+            $_SESSION["zimmer"][] = $_POST['room-select'];
+        }
+
+        if(empty($_SESSION["breakfast"])&&isset($_POST['breakfast'])){
+            $_SESSION["breakfast"] = array();
+            $_SESSION["breakfast"][] = 'Ja';
+        }else if(isset($_POST['breakfast'])){
+            $_SESSION["breakfast"][] = 'Ja';
+        }else{
+            $_SESSION["breakfast"][] = 'Nein';
+        }
+
+        if(empty($_SESSION["parking"])&&isset($_POST['parking'])){
+            $_SESSION["parking"] = array();
+            $_SESSION["parking"][] = 'Ja';
+        }else if(isset($_POST['parking'])){
+            $_SESSION["parking"][] = 'Ja';
+        }else{
+            $_SESSION["parking"][] = 'Nein';
+        }
+
+        if(empty($_SESSION["pets"])&& isset($_POST['pets'])){
+            $_SESSION["pets"] = array();
+            $_SESSION["pets"][] = 'Ja';
+        }else if(isset($_POST['pets'])){
+            $_SESSION["pets"][] = 'Ja';
+        }else{
+            $_SESSION["pets"][] = 'Nein';
+        }
+        
     }
-if(isset($_POST['parking'])){
-    $parking[] = "Ja";
-    $_SESSION['parking'] = $parking;
 }
-    else{
-        $parking[] = "Nein";
-        $_SESSION['parking'] = $parking;
-    }
-if(isset($_POST['pets'])){
-    $pets[] = "Ja";
-    $_SESSION['pets'] = $pets;
-}
-    else{
-        $pets[] = "Nein";
-        $_SESSION['pets'] = $pets;
-    }
+
 
 ?>
 
 <div class="content text-center" >
 
-<figcaption>
-    <h2>Deine Buchung</h2>
-    <?php foreach($fromdate as $fromdate): ?>
-        <p>Anreisedatum: <?php echo $fromdate; ?></p>
-    <?php endforeach; ?>
-    <?php foreach($todate as $todate): ?>
-        <p>Abreisedatum: <?php echo $todate; ?></p>
-    <?php endforeach; ?>
-    <?php foreach($zimmer as $zimmer): ?>
-        <p>Zimmer: <?php echo $zimmer; ?></p>
-    <?php endforeach; ?>
-    <?php foreach($breakfast as $breakfast): ?>
-        <p>Frühstück: <?php echo $breakfast; ?></p>
-    <?php endforeach; ?>
-    <?php foreach($parking as $parking): ?>
-        <p>Parkplatz: <?php echo $parking; ?></p>
-    <?php endforeach; ?>
-    <?php foreach($pets as $pets): ?>
-        <p>Haustiere: <?php echo $pets; ?></p>
-    <?php endforeach; ?>
-</figcaption>
 
+<table class="table">
+  <thead class="thead-light">
+    <h2>Reservierungen</h2>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Anreisedatum</th>
+        <th scope="col">Abreisedatum</th>
+        <th scope="col">Frühstück</th>
+        <th scope="col">Parkplatz</th>
+        <th scope="col">Haustiere</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <?php foreach($_SESSION["fromdate"] as $key => $value){
+        echo "<tr>";
+        echo "<th scope='row'>".($key+1)."</th>";
+        echo "<td>".$value."</td>";
+        echo "<td>".$_SESSION["todate"][$key]."</td>";
+        echo "<td>".$_SESSION["breakfast"][$key]."</td>";
+        echo "<td>".$_SESSION["parking"][$key]."</td>";
+        echo "<td>".$_SESSION["pets"][$key]."</td>";
+        echo "</tr>";
+    } ?>
+    
+</table>
+<h2>Beiträge erfassen</h2>
 <form action="news.php" method="post" enctype="multipart/form-data">
   <div class="form-group">
     <label for="picture">Select image to upload:</label>
