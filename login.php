@@ -7,8 +7,6 @@ include 'components/banner.php';
 session_start();
                 print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
                 print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht 
-                print_r($_SESSION); //Hilfe bei der Implementierung -wird gelöscht
-
 
                 $fehler1 = $fehler2= "";
                 if(!(empty($_GET["username"])&&empty($_GET["password"]))){

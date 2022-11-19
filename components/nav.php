@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"> <img src="img/logo.png" width="80" height="70"></a>
@@ -11,6 +12,11 @@
                 <a class="nav-link <?php echo($page =='restaurant'?'active':'') ?>" href="restaurant.php">Restaurant</a>
                 <a class="nav-link <?php echo($page =='about'?'active':'') ?>" href="about.php">Über Uns</a>
                 <a class="nav-link <?php echo($page =='login'?'active':'') ?>" href="login.php">Login</a>
+
+                <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
+                    echo '<a class="nav-link'.($page =="profil"?"active":"").'" href="profil.php">Profil</a>';
+                }?>
+            
                 </div>
             </div>
         </nav>
