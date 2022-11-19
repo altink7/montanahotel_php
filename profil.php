@@ -2,7 +2,7 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
-include 'components/banner.php';
+
 
 
 $fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
@@ -96,22 +96,24 @@ $fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
     } ?>
     
 </table>
-<h2>Beiträge erfassen</h2>
-<form action="news.php" method="post" enctype="multipart/form-data">
+<div class="contact text-center">
+        <h1 class="kontaktieren">Beiträge verfassen</h1><hr>
+        <form action="news.php" method="post" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="picture">Bild hochladen:</label>
-    <input type="file" name="picture" id="picture" accept="image/*"><br><br>
-  </div>
+    <label for="picture">Bild hochladen:</label><br>
+    <input type="file" name="picture" id="picture" accept="image/*"><br>
+  </div><br>
   <div class="form-group">
-    <label for="title">Titel: </label>
-    <input type="text" name="title" id="title"><br><br> 
+    
+    <input type="text" name="title" id="title" placeholder="Titel"><br><br> 
   </div>
   <div class="form-group">
   <textarea type="text" name="text" id="text" placeholder="Ihr Beitrag"cols="45" rows="5"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-
+  <button type="submit">Veröffentlichen</button>
+            </div>
+        </div>
+    </div>
 </div>
 <br><br><br>
 <?php
