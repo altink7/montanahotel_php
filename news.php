@@ -16,11 +16,44 @@ $picture = $title = $text = "";
 
 ?>
 
-<div>
-    <h2> <?php echo $title; ?> </h2>
-    <p> <?php echo $text; ?></p>
-    <?php echo '<img src="upload/' . $_FILES['picture']['name'] . '" />'; ?>
-</div>
+    <div class="Company-content">
+        <img <?php echo 'src="upload/' . $_FILES['picture']['name'] . '"'; ?> alt="IMAGE" width="200px" height="80px">
+        <h2><?php echo $title; ?></h2>
+
+        <p><?php echo $text; ?>
+        </p>
+
+    </div>
+
+    <style>
+        .Company-content {
+        padding: 20px;
+        margin: 20px;
+        border-style: hidden;
+        border-radius: 11px;
+        backface-visibility: visible;
+        background-color: rgb(4, 185, 185);
+        }
+
+        .Company-content img{
+        float: left;
+        padding: 1px;
+        }
+
+        .Company-content a {
+        text-decoration: none;
+        color: darkblue;
+        font-weight: bold;
+        font-style: italic;
+        }
+
+        .Company-content a:hover {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-style: normal;
+        }
+</style>
 
    
     <?php

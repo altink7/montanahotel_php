@@ -9,9 +9,9 @@ $fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
 
 //check if last element of array
 
-if (empty($_SESSION["fromdate"]) || end($_SESSION["fromdate"]) != $_POST['from-date']) {
     
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_SESSION["fromdate"]) || end($_SESSION["fromdate"]) != $_POST['from-date']) {
         if(empty($_SESSION["fromdate"])){
             $_SESSION["fromdate"] = array();
             $_SESSION["fromdate"][] = $_POST['from-date'];

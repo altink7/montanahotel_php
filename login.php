@@ -4,8 +4,8 @@ include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
                 print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
-                print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht 
-
+                print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht
+                
                 $fehler1 = $fehler2= "";
                 if(!(empty($_GET["username"])&&empty($_GET["password"]))){
                     if($_SESSION["password"] == $_GET["password"]){
@@ -18,7 +18,7 @@ include 'components/banner.php';
                     }else{
                         $fehler2 = "das alte Passwort ist nicht korrekt";
                     }
-                }     
+                }
 
 $logoutValue = empty($_GET["logout"])?false:$_GET["logout"];
 $changeValue = empty($_GET["change"])?false:$_GET["change"];
