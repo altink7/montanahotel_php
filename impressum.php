@@ -44,7 +44,7 @@ include 'components/banner.php';
                 </tr>
             </table>
 
-        </div>
+        </div><br><br><br>
 
     </section>
     

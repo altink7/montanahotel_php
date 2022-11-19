@@ -21,7 +21,7 @@ include 'components/banner.php';
                 <img class="altinimg" src="img/altin.png" width="230" height="150">
             </figcaption>
         </div>
-
+        <br><br><br>
         
     </section>
     <!--Section 1 end-->

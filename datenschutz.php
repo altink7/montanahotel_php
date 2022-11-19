@@ -36,7 +36,7 @@ include 'components/banner.php';
             <img class = foodimg src="img/food.png">
     </div>
         <div class="col-lg-1"></div>
-    </div>
+    </div><br><br><br>
     <!--Section food end-->
   
     <?php

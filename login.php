@@ -130,7 +130,7 @@ $errors = array();
                 <a class="btn btn-primary"  style= "margin-top:30px;"href="?logout=true">Logout</a>
                 
             <?php endif ?>
-        </div>
+        </div><br><br><br>
     </section>
     
     <?php

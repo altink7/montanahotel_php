@@ -119,6 +119,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
+		<br><br><br>
     
     <!--Section 1 end-->
   

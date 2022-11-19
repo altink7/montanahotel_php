@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p><?php echo $text; ?>
         </p>
 
-</div>
+</div><br><br><br>
 
     <style>
         .Company-content {

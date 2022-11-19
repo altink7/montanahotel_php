@@ -29,7 +29,7 @@ include 'components/banner.php';
                     <td>Ja, wir bieten ein Frühstücksbuffet an.</td>
                 </tr>
             </table>
-        </div>
+        </div><br><br><br>
     </section>
     <?php
     include 'components/footer.php';

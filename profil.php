@@ -10,7 +10,7 @@ $fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
 //check if last element of array
 
     
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_SESSION["fromdate"]) || end($_SESSION["fromdate"]) != $_POST['from-date']) {
         if(empty($_SESSION["fromdate"])){
             $_SESSION["fromdate"] = array();
@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <table class="table">
   <thead class="thead-light">
+  <br><br><br>
     <h2>Reservierungen</h2>
     <tr>
         <th scope="col">#</th>
@@ -83,9 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </thead>
   <tbody>
     <tr>
-    <?php if (!empty($_SESSION["fromdate"])) {
-        foreach($_SESSION["fromdate"] as $key => $value){
-        
+    <?php foreach($_SESSION["fromdate"] as $key => $value){
         echo "<tr>";
         echo "<th scope='row'>".($key+1)."</th>";
         echo "<td>".$value."</td>";
@@ -94,30 +93,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<td>".$_SESSION["parking"][$key]."</td>";
         echo "<td>".$_SESSION["pets"][$key]."</td>";
         echo "</tr>";
-        }
-
     } ?>
     
 </table>
 <h2>Beiträge erfassen</h2>
 <form action="news.php" method="post" enctype="multipart/form-data">
   <div class="form-group">
-    <label for="picture">Select image to upload:</label>
+    <label for="picture">Bild hochladen:</label>
     <input type="file" name="picture" id="picture" accept="image/*"><br><br>
   </div>
   <div class="form-group">
-    <label for="title">Select title: </label>
+    <label for="title">Titel: </label>
     <input type="text" name="title" id="title"><br><br> 
   </div>
   <div class="form-group">
-  <label for="title">Select text: </label>
+  <label for="title">Text: </label>
   <input type="text" name="text" id="text"> <br> <br>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 </div>
-
+<br><br><br>
 <?php
     include 'components/footer.php';
 ?>
