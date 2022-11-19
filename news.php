@@ -6,18 +6,28 @@ include 'components/banner.php';
 
 $picture = $title = $text = "";
 
-    //move the uploaded file to the uploads folder
-    move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $_FILES['picture']['name']);
 
-    //define post entrys
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //check if the uploaded file is an image
+    if (isset($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
+        $info = getimagesize($_FILES['picture']['tmp_name']);
+        if ($info === FALSE) {
+            echo "Error: Not an image";
+        } else {
+            $picture = $_FILES['picture']['name'];
+            $target = 'images/' . $picture;
+            move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $_FILES['picture']['name']);
+        }
+    }
     $picture = $_FILES['picture']['name'];
     $title = $_POST['title'];
     $text = $_POST['text'];
+}
 
 ?>
 
     <div class="Company-content">
-        <img <?php echo 'src="upload/' . $_FILES['picture']['name'] . '"'; ?> alt="IMAGE" width="200px" height="80px">
+        <img <?php echo 'src="upload/' . $picture . '"'; ?> alt="IMAGE" width="200px" height="80px">
         <h2><?php echo $title; ?></h2>
 
         <p><?php echo $text; ?>
