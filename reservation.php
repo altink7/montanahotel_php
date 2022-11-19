@@ -62,6 +62,8 @@ include 'components/nav.php';
     </div>
     <!-- This is main Form Area  End -->
 </body>
+<!-- align content in the middle of the page -->
+
 <?php
 include 'components/footer.php';
 ?>

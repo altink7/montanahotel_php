@@ -3,6 +3,11 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
+session_start();
+
+$button = '<span class="col-5 social"><a id="submitButton" class="reservation"
+ href="'.(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ?"reservation.php":"login.php").'"><input type="button" value="Buchen"></a> </span>';
+ 
 ?>
     <!--Section 1 start-->
 	<section>
@@ -24,7 +29,7 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+					<?php echo $button; ?>
 						<span class="col-7 social text-end">€ 100 / Nacht</span>
 					</div>
 				</div>
@@ -50,7 +55,7 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+					<?php echo $button; ?>
 						<span class="col-7 social text-end">€ 120 / Nacht</span>
 					</div>
 				</div>
@@ -76,7 +81,7 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+					<?php echo $button; ?>
 						<span class="col-7 social text-end">€ 300 / Nacht</span>
 					</div>
 				</div>
@@ -103,7 +108,7 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+					<?php echo $button; ?>
 						<span class="col-7 social text-end">€ 200 / Nacht</span>
 					</div>
 				</div>

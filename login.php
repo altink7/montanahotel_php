@@ -6,8 +6,10 @@ include 'components/banner.php';
 
 session_start();
                 print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
-                print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht
-                
+                print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht 
+                print_r($_SESSION); //Hilfe bei der Implementierung -wird gelöscht
+
+
                 $fehler1 = $fehler2= "";
                 if(!(empty($_GET["username"])&&empty($_GET["password"]))){
                     if($_SESSION["password"] == $_GET["password"]){
@@ -20,8 +22,7 @@ session_start();
                     }else{
                         $fehler2 = "das alte Passwort ist nicht korrekt";
                     }
-                }
-
+                }     
 
 $logoutValue = empty($_GET["logout"])?false:$_GET["logout"];
 $changeValue = empty($_GET["change"])?false:$_GET["change"];
@@ -49,6 +50,7 @@ $errors = array();
     if ( $_POST["username"] === "montanauser" && $_POST["password"] === "12345678") {
         $_SESSION["username"] = $_POST["username"];
         $_SESSION["password"] = $_POST["password"];
+        $_SESSION['loggedin'] = true;
     }
  
 }
