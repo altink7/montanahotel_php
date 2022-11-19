@@ -22,7 +22,7 @@ include 'components/banner.php';
             </figcaption>
         </div>
 
-
+        
     </section>
     <!--Section 1 end-->
 
