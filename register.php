@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit">Registrieren</button>
 
             </form>
         </div>

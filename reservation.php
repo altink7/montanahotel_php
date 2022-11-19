@@ -5,7 +5,7 @@ include 'components/nav.php';
 
 
 ?>
-<div class="bgReservation">
+<div class="bgForms">
 <br><br><br>
     <div class="bf-container text-center">
         <div class="bf-body">

@@ -2,51 +2,40 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
-include 'components/banner.php';
+
 ?>
    
     <section>
-        <div class="impressum">
-
-            <table style="margin-top:100px; margin-left: 20px; margin-bottom: 100px;">
-                <tr>
-                    <td>Firmenname:</td>
-                    <td>Montana Resort GmbH</td>
-                </tr>
-            
-                <tr>
-                    <td>Firmensitz:</td>
-                    <td>Hochstädtplatz 6 | 1200 Wien</td>
-                </tr>
-                <tr>
-                    <td>Telefon:</td>
-                    <td>+43 310 310 3</td>
-                </tr>
-                <tr>
-                    <td>Fax:</td>
-                    <td>+43 310 310 3</td>
-                </tr>
-                <tr>
-                    <td>E-Mail-Adresse:</td>
-                    <td>kundendienst@montana.at</td>
-                </tr>
-                <tr>
-                    <td>Firmenbuch-Nr.</td>
-                    <td>FN 911991g</td>
-                </tr>
-                <tr>
-                    <td>Firmenbuchgericht:</td>
-                    <td>Handelsgericht Wien</td>
-                </tr>
-                <tr>
-                    <td>UID-Nr:</td>
-                    <td>ATU 911991</td>
-                </tr>
-            </table>
-
-        </div><br><br><br>
-
-    </section>
+    <div class="bgForms">
+    <br><br><br>
+    <div class="contact text-center">
+        <h1 class="kontaktieren">Impressum</h1><br>
+                <div class="col-lg-12">
+                    <h5>Firmenname: Montana Resort GmbH</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>Firmensitz: Hochstädtplatz 6 | 1200 Wien</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>Telefon: +43 310 310 3</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>Fax: +43 310 310 3</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>E-Mail-Adresse: kundendienst@montana.at</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>Firmenbuch-Nr. FN 911991g</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>Firmenbuchgericht: Handelsgericht Wien</h5>
+                </div>
+                <div class="col-lg-12">
+                    <h5>UID-Nr: ATU 911991</h5>
+                </div>
+            </div>
+        </div>
     
     <?php
     include 'components/footer.php';

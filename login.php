@@ -114,7 +114,7 @@ $errors = array();
                                         <input type="password" name="newPasswordConfirmed" id="newPasswordConfirmed" minlength="8" placeholder="Passwort bestätigen">
                                         <br>
                                     </td>
-                                    <td> <button type="submit">Submit</button> </td>
+                                    <td> <button type="submit">Bestätigen</button> </td>
                                 </form>
                                     </tr>
 

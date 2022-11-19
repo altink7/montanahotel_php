@@ -107,8 +107,7 @@ $fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
     <input type="text" name="title" id="title"><br><br> 
   </div>
   <div class="form-group">
-  <label for="title">Text: </label>
-  <input type="text" name="text" id="text"> <br> <br>
+  <textarea type="text" name="text" id="text" placeholder="Ihr Beitrag"cols="45" rows="5"></textarea>
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

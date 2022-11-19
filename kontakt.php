@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
     <!--Section start-->
-    <div class="bgContact">
+    <div class="bgForms">
     <br><br><br>
     <div class="contact text-center">
         <h1 class="kontaktieren">Kontaktieren Sie uns!</h1><br>
