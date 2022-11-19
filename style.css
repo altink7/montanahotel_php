@@ -90,14 +90,13 @@ footer ul li a:hover {
 }
 
 .poolimg {
-  width: 100%;
+
   margin-top: 60px;
   padding-right: 80px;
   padding-left: 10%;
 }
 
 .food {
-  width: 100%;
   align-items: center;
   display: flex;
   justify-content: center;

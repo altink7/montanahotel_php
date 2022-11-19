@@ -4,17 +4,18 @@ include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
 ?>
+
+
 <!--Section pool start-->
 <br><br><br>
 <div class = "row"></div>
     <div class="row">
         <div class="col-lg-2"></div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
                 <img class = poolimg src="img/pool.png">
         </div>
         <div class="col-lg-1"></div>
         <div class="col-lg-4 contentroom btn-group-vertical">
-            <a name="mountainsweet"></a>
             <h2 class="content-title">Atemberaubende Aussicht</h2>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
             </div>
@@ -27,12 +28,11 @@ include 'components/banner.php';
     <div class="row">
         <div class="col-lg-2"></div>
         <div class="col-lg-4 contentroom btn-group-vertical">
-            <a name="mountainsweet"></a>
             <h2 class="content-title">Haubenküche</h2>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>	
             </div>
         <div class="col-lg-1"></div>
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <img class = foodimg src="img/food.png">
     </div>
         <div class="col-lg-1"></div>
