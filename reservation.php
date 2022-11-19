@@ -6,7 +6,7 @@ include 'components/banner.php';
 
 ?>
 
-<div class="above-reservation"></div>
+<br><br><br>
     <div class="bf-container text-center">
         <div class="bf-body">
             <div class="bf-head">

@@ -189,10 +189,7 @@ footer ul li a:hover {
 .map {
   margin-top: 100px;
 }
-.row {
-  padding-top: 50px;
-  padding-bottom: 30px;
-}
+
 .roomimg {
   width: 100%;
   padding-bottom: 10px;
@@ -200,12 +197,6 @@ footer ul li a:hover {
 .contentroom {
   padding-left: 15px;
   padding-right: 15px;
-}
-.abovecontact {
-  padding-top: 100px;
-}
-.abovelogin {
-  padding-top: 100px;
 }
 .contact {
   color: white;
@@ -215,30 +206,6 @@ footer ul li a:hover {
   background-color: #5890b3;
 }
 
-.field,
-.textarea {
-  margin: 0 0.5em 1em 0;
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-}
-.field {
-  flex: 40%;
-  width: 45%;
-  float: left;
-}
-.textarea {
-  flex: 90%;
-  width: 90%;
-}
-.contactbutton {
-  padding: 0.5em 1em;
-  border: 1px solid #ccc;
-  width: 100%;
-}
-.kontaktieren {
-  padding-bottom: 5px;
-}
-
 .bf-container {
   color: white;
   padding: 2%;
@@ -246,6 +213,4 @@ footer ul li a:hover {
   margin: 0 auto;
   background-color: #5890b3;
 }
-.above-reservation{
-  padding-top: 100px;
-}
+
