@@ -27,10 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 }
 ?>
-<link rel="stylesheet" href="style.css">
-
     <!--Section start-->
-    <div class = "abovecontact"></div>
+    <br><br><br>
     <div class="contact text-center">
         <h1 class="kontaktieren">Kontaktieren Sie uns!</h1><br>
         
@@ -42,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-1"></div>
                 <div class="col-3">
                     <h5> <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email"></h5>
-                </div>
+                 </div>
                 <div class="col-3"></div>
             </div>
                 <div class="row">
