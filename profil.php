@@ -83,9 +83,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </thead>
   <tbody>
     <tr>
-    <?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    <?php if (!empty($_SESSION["fromdate"])) {
         foreach($_SESSION["fromdate"] as $key => $value){
-        }
+        
         echo "<tr>";
         echo "<th scope='row'>".($key+1)."</th>";
         echo "<td>".$value."</td>";
@@ -94,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<td>".$_SESSION["parking"][$key]."</td>";
         echo "<td>".$_SESSION["pets"][$key]."</td>";
         echo "</tr>";
+        }
 
     } ?>
     
