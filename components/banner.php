@@ -23,6 +23,8 @@
                 echo('<p>Kontakt</p>');
             }elseif($page =='datenschutz'){
                 echo('<p>Datenschutzerklärung</p>');
+            }elseif($page =='reservation'){
+                    echo('<p>Zimmer Buchen</p>');
             }else{
                 echo('<p>Willkommen bei Montana!</p>');
             }

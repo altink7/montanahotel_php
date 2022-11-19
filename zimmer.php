@@ -24,8 +24,8 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 100 / Tag</span>
+					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+						<span class="col-7 social text-end">€ 100 / Nacht</span>
 					</div>
 				</div>
 			</div>
@@ -50,8 +50,8 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 120 / Tag</span>
+					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+						<span class="col-7 social text-end">€ 120 / Nacht</span>
 					</div>
 				</div>
 			</div>
@@ -76,8 +76,8 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 300 / Tag</span>
+					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+						<span class="col-7 social text-end">€ 300 / Nacht</span>
 					</div>
 				</div>
 			</div>
@@ -103,8 +103,8 @@ include 'components/banner.php';
 				</ul>
 				<div class="content-footer">
 					<div class="row">
-						<span class="col-6 social"><a href="#doppelzimmer"><i class="fa-solid fa-check"></i></a> <input id="buchenButton" type="submit" value="Buchen"></span>
-						<span class="col-6 social text-end">€ 200 / Tag</span>
+					<span class="col-5 social"><a id="submitButton" class="reservation" href="reservation.php"><input type="button" value="Buchen"></a> </span>
+						<span class="col-7 social text-end">€ 200 / Nacht</span>
 					</div>
 				</div>
 			</div>
