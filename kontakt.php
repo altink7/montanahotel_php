@@ -1,3 +1,4 @@
+
 <?php
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
@@ -26,44 +27,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 }
 ?>
-
+<link rel="stylesheet" href="style.css">
 
     <!--Section start-->
     <div class = "abovecontact"></div>
- 
-    <div class = "contact">
-    <h1 class="kontaktieren">Kontaktieren Sie uns!</h1>
-    <form class="cs-form cs-message">
-    
-        <label class="cform" for="name">Name: </label>
-        <input type="text" class="field field1" placeholder="Name" name="name" id="name required">
-    
-        <label  class="cform" for="email">E-Mail-Adresse: </label>
-        <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email">
-    
-        <label class="cform" for="telefonnummer">Telefonnummer: </label>
-        <input type="text" class="field field3" placeholder="Telefonnummer" name="telefonnummer" id="felefonnummer">
-    
-        <label class="cform" for="buchungsnummer" >Buchungsnummer: </label>
-        <input type="text" class="field field4" placeholder="Buchungsnummer" name="buchungsnummer" id="buchungsnummer">
-    
-        <label class="cform" for="helfen">Wie können wir Ihnen helfen? </label>
-        <textarea class="textarea" rows="5" cols="20" placeholder="Wie können wir Ihnen helfen?" name="helfen" id="helfen"></textarea>
-    
-        <div class="errors" style= "color:red;">
-                <?php 
-               foreach($errors as $value){
-                echo $value ."<br>";
-                }
-                ?>
+    <div class="contact text-center">
+        <h1 class="kontaktieren">Kontaktieren Sie uns!</h1><br>
+        
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-3">
+                    <h5><input type="text" class="field field1" placeholder="Name" name="name" id="name required"></h5>
                 </div>
-
-        <button class="contactbutton" type="submit">
-            Absenden
-        </button>
-    
-    </form>
-</div>
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <h5> <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email"></h5>
+                </div>
+                <div class="col-3"></div>
+            </div>
+                <div class="row">
+                    <div class="col-2"></div>
+                <div class="col-3">
+                    <h5><input type="text" class="field field3" placeholder="Telefonnummer" name="telefonnummer" id="felefonnummer"></h5>
+                </div>
+                <div class="col-1"></div>
+                <div class="col-3">
+                    <h5><input type="text" class="field field4" placeholder="Buchungsnummer" name="buchungsnummer" id="buchungsnummer"></h5>
+                </div>
+                <div class="col-3"></div>
+             </div>
+             <br>
+            <div class="row">
+                <div class="col-12">
+                    <h5>Wie können wir Ihnen helfen?</h5>
+                    <textarea name="messages" id="messages" cols="75" rows="5"></textarea>
+                </div>
+                <div class="col-12">
+                    <input type="submit" value="Absenden">
+            </div>
+        </div>
+    </div>
     <!--Section end-->
   
     <?php

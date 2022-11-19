@@ -11,6 +11,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 ?>
     <!--Section 1 start-->
 	<section>
+	<br><br><br>
         <div class="row">
         <div class="col-lg-1"></div>
 			<div class="col-lg-5">
@@ -26,7 +27,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 					<li class="list-group-item">45 m²</li>
 					<li class="list-group-item">Queen-size Bett</li>
 					<li class="list-group-item">Bad, WC, Safe, TV</li>
-				</ul>
+				</ul><br>
 				<div class="content-footer">
 					<div class="row">
 					<?php echo $button; ?>
@@ -36,6 +37,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
+		<br><br><br>
 
         <div class="row">
             <div class="col-lg-1"></div>
@@ -52,7 +54,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 					<li class="list-group-item">50 m²</li>
 					<li class="list-group-item">King-size Bett</li>
 					<li class="list-group-item">Bad, WC, Safe, TV</li>
-				</ul>
+				</ul><br>
 				<div class="content-footer">
 					<div class="row">
 					<?php echo $button; ?>
@@ -62,6 +64,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
+		<br><br><br>
     
     <div class="row">
         <div class="col-lg-1"></div>
@@ -78,7 +81,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 					<li class="list-group-item">120 m²</li>
 					<li class="list-group-item">King-size Betten (3x)</li>
 					<li class="list-group-item">Bad, WC, Safe, TV, Pool</li>
-				</ul>
+				</ul><br>
 				<div class="content-footer">
 					<div class="row">
 					<?php echo $button; ?>
@@ -88,6 +91,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
+		<br><br><br>
 
         <div class="row">
             <div class="col-lg-1"></div>
@@ -105,7 +109,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 					<li class="list-group-item">70 m²</li>
 					<li class="list-group-item">King-size Bett (2x)</li>
 					<li class="list-group-item">Bad, WC, Safe, TV, Pool</li>
-				</ul>
+				</ul><br>
 				<div class="content-footer">
 					<div class="row">
 					<?php echo $button; ?>

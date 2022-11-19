@@ -209,22 +209,12 @@ footer ul li a:hover {
 }
 .contact {
   color: white;
-  padding: 2%;
+  padding: 5%;
   max-width: 980px;
   margin: 0 auto;
   background-color: #5890b3;
 }
 
-.cform {
-  position: absolute;
-  clip: rect(1px 1px 1px 1px);
-  clip: rect(1px, 1px, 1px, 1px);
-}
-
-.cs-form {
-  display: flex;
-  flex-flow: row wrap;
-}
 .field,
 .textarea {
   margin: 0 0.5em 1em 0;
@@ -250,9 +240,12 @@ footer ul li a:hover {
 }
 
 .bf-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
+  color: white;
+  padding: 2%;
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: #5890b3;
+}
+.above-reservation{
+  padding-top: 100px;
 }
