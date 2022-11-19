@@ -7,7 +7,7 @@ include 'components/nav.php';
    
     <section>
     <div class="bgForms">
-    <br><br><br>
+    <br><br><br><br><br><br>
     <div class="contact text-center">
         <h1 class="kontaktieren">Impressum</h1><br>
                 <div class="col-lg-12">
