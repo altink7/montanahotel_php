@@ -3,8 +3,6 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 include 'components/banner.php';
-
-session_start();
                 print_r($_GET);  //Hilfe bei der Implementierung -wird gelöscht
                 print_r($_POST); //Hilfe bei der Implementierung -wird gelöscht 
 

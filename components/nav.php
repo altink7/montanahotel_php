@@ -9,7 +9,7 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-evenly text-center" id="navbarSupportedContent">
                 <a class="nav-link <?php echo($page =='zimmer'?'active':'') ?>" aria-current="page" href="zimmer.php">Zimmer</a>
-                <a class="nav-link <?php echo($page =='restaurant'?'active':'') ?>" href="restaurant.php">Restaurant</a>
+                <a class="nav-link <?php echo($page =='news'?'active':'') ?>" href="news.php">News</a>
                 <a class="nav-link <?php echo($page =='about'?'active':'') ?>" href="about.php">Über Uns</a>
                 <a class="nav-link <?php echo($page =='login'?'active':'') ?>" href="login.php">Login</a>
 
