@@ -4,65 +4,51 @@ include 'components/head.php';
 include 'components/nav.php';
 ?>
 
-<body>
-    <!-- This is main Form Area Start ++ -->
-    <div class="bf-container">
-        <!-- Main form Body Start -->
-        <div class="bf-body">
-            <!-- Form haed -->
-            <div class="bf-head">
-                <h1>Zimmer Buchen</h1>
-                <p>Buche jetzt deinen Aufenthalt bei Montana!</p>
-            </div>
-            <!-- Form haed -->
-            <!-- Form Body Box -->
-            <form class="bf-body-box" action="form.php">
-                <div class="bf-row">
-                    <div class="bf-col-6">
-                        <input type="text" name="name" id="name" placeholder="Name">
-                    </div>
-                    <div class="bf-col-6">
-                        <input type="email" name="email" id="email" placeholder="E-Mail-Adresse">
-                    </div>
-                </div>
-                <div class="bf-row">
-                    <div class="bf-col-6">
-                        <p>Anreisedatum</p>
-                        <input type="date" name="date" id="date">
-                    </div>
-                    <div class="bf-col-6">
-                        <p>Abreisedatum</p>
-                        <input type="date" name="date" id="date">
-                    </div>
-                    <div class="bf-col-6">
-                        <select name="s-select">
-                            <option>Zimmer auswählen</option>
-                            <option value="1">Mountain Sweet</option>
-                            <option value="2">Ozean Sweet</option>
-                            <option value="3">Deluxe Villa</option>
-                            <option value="4">Ozean Villa</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="bf-row">
-                    <div class="bf-col-12">
-                        <p>Anmerkungen</p>
-                        <textarea name="Messages" id="Messages" cols="10" rows="2"></textarea>
-                    </div>
-                </div>
-                <div class="bf-row">
-                    <div class="bf-col-3">
-                        <input type="submit" value="Submit">
-                    </div>
-                </div>
-            </form>
-            <!-- Form Body Box -->
-        </div>
-        <!-- Main form Body End -->
-    </div>
-    <!-- This is main Form Area  End -->
-</body>
-<!-- align content in the middle of the page -->
+<div class = "abovecontact"></div>
+    <div class = "contact">
+    <h1 class="kontaktieren">Buchen Sie jetzt Ihren Aufenthalt bei Montana!</h1>
+    <form class="cs-form cs-message">
+    
+        <label class="cform" for="name">Name: </label>
+        <input type="text" class="field field1" placeholder="Name" name="name" id="name required">
+    
+        <label  class="cform" for="email">E-Mail-Adresse: </label>
+        <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email">
+    
+        <label class="cform" for="telefonnummer">Telefonnummer: </label>
+        <input type="text" class="field field3" placeholder="Telefonnummer" name="telefonnummer" id="felefonnummer">
+
+        <select class="cform" name="s-select">
+            <option>Zimmer auswählen</option>
+            <option value="1">Mountain Sweet</option>
+            <option value="2">Ozean Sweet</option>
+            <option value="3">Deluxe Villa</option>
+            <option value="4">Ozean Villa</option>
+        </select>
+    
+        <label class="cform" for="telefonnummer">Anreisedatum </label>
+        <input type="date" class="field field3" placeholder="Anreisedatum" name="date" id="date">
+        <label class="cform" for="telefonnummer">Anreisedatum </label>
+        <input type="date" class="field field3" placeholder="Anreisedatum" name="date" id="date">
+                
+        <input type="checkbox" id="fruehtstueck" name="fruehtstueck" value="fruehtstueck">
+        <label for="fruehtstueck">inklusive Frühstück (€ 15 / Tag)</label>
+        <input type="checkbox" id="parkplatz" name="parkplatz" value="parkplatz">
+        <label for="parkplatz">inklusive Parkplatz (€ 10 / Tag)</label>
+        <input type="checkbox" id="haustiere" name="haustiere" value="haustiere">
+        <label for="haustiere">Haustiere?</label>
+        
+                    
+        <label class="cform" for="helfen">Anmerkungen </label>
+        <textarea class="textarea" rows="5" cols="20" placeholder="Möchten Siw uns noch etwas mitteilen?" name="helfen" id="helfen"></textarea>
+    
+       
+        <button class="contactbutton" type="submit">
+            Absenden
+        </button>
+</div>
+
+    </form>
 
 <?php
 include 'components/footer.php';
