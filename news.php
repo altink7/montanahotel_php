@@ -2,7 +2,6 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
-include 'components/banner.php';
 
 $picture = $title = $text = "";
 
@@ -26,42 +25,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-    <div class="Company-content">
-        <img <?php echo 'src="upload/' . $picture . '"'; ?> alt="IMAGE" width="100px" height="80px">
-        <h2><?php echo $title; ?></h2>
+<br><br><br>
+    <div class="contact text-center">
+        <h1 class="kontaktieren">Beiträge</h1><hr>
+        <img src="img/food.png" width="150" height="150">
+            <br><br>
+                <div class="col-lg-12">
+                <h2>Ich bin begeistert</h2>
+                </div>
+                <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                <p>Eines der schönsten Hotels in denen ich jemals war. Sehr nettes Personal, vor allem die Geschäftsführer. Auch das Essen war eine 10 von 10</p>
+                </div>
+                <div class="col-lg-3"></div><br>
+                </div><hr>
+                <div class="col-lg-12">
+                <img <?php echo 'src="upload/' . $picture . '"'; ?> alt="IMAGE" width="150" height="150">
+                </div><br>
+                <div class="col-lg-12">
+                <h2><?php echo $title; ?></h2>
+                </div>
+                <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                <p><?php echo $text; ?></p>
+                </div>
+                <div class="col-lg-3"></div><br>
+            </div>
+        </div>
+        <br><br><br>
+    </div>
 
-        <p><?php echo $text; ?>
-        </p>
 
-</div><br><br><br>
-
-    <style>
-        .Company-content {
-        padding: 20px;
-        margin: 20px;
-        backface-visibility: visible;
-        background-color: #5890b3;
-        }
-   
-        .Company-content img{
-        float: left;
-        padding: 1px;
-        }
-    
-        .Company-content a {
-        text-decoration: none;
-        color: darkblue;
-        font-weight: bold;
-        font-style: italic;
-        }
-
-        .Company-content a:hover {
-        text-decoration: none;
-        color: black;
-        font-weight: bold;
-        font-style: normal;
-        }
-</style>
 
 
     <?php
