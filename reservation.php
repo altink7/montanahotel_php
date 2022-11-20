@@ -24,7 +24,7 @@ include 'components/nav.php';
                     </div> <br>
                     <div class="bf-col-lg-6 h4">
                         <select name="room-select">
-                            <option class="rselect">Zimmer auswählen</option>
+                            <option class="rselect" value="keine Auswahl">Zimmer auswählen</option>
                             <option value="Mountain Sweet">Mountain Sweet</option>
                             <option value="Ozean Sweet">Ozean Sweet</option>
                             <option value="Deluxe Villa">Deluxe Villa</option>

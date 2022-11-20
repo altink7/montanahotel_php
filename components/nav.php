@@ -13,7 +13,7 @@
                 <a class="nav-link <?php echo($page =='about'?'active':'') ?>" href="about.php">Über Uns</a>
                 <a class="nav-link <?php echo($page =='login'?'active':'') ?>" href="login.php">Login</a>
                 <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
-                    echo '<a class="nav-link'.($page =="profil"?"active":"").'" href="profil.php">Profil</a>';
+                    echo '<a class="nav-link '.($page =="profil"?"active":"").'" href="profil.php">Profil</a>';
                 }?>
             
                 </div>
