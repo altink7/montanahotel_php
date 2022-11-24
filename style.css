@@ -212,8 +212,4 @@ footer ul li a:hover {
   margin: 0 auto;
   background-color: #5890b3;
 }
-.bgForms{
-  background-image: url("img/banner.png");
-  height: 80vh;
-  background-size: cover;
-}
+

@@ -25,6 +25,7 @@ include 'components/nav.php';
             </div>
         </div>
     </div>
+    <br><br><br>
     <?php
     include 'components/footer.php';
     ?>
