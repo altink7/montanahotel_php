@@ -52,9 +52,11 @@ include 'components/nav.php';
                     </div>
                 </div>
             </form>
+           
         </div>
     </div>
 </div>
+
 <?php
 include 'components/footer.php';
 ?>
