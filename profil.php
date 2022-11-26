@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="contact text-center">
             <table class="reservierung-table">
                 <thead class="thead-light">
-                    <h2>Reservierungen</h2>
+                    <h1>Reservierungen</h1>
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Anreisedatum</th>
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="text" name="title" id="title" placeholder="Titel"><br><br>
                 </div>
                 <div class="form-group">
-                    <textarea type="text" name="text" id="text" placeholder="Ihr Beitrag" cols="45" rows="5"></textarea>
+                    <textarea type="text" name="text" id="text" placeholder="Ihr Beitrag" cols="40" rows="5"></textarea>
                 </div>
                 <button class="btn btn-primary" style="margin-top: 3%;" type="submit">Veröffentlichen</button>
             </div>

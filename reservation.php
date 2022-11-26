@@ -43,7 +43,7 @@ include 'components/nav.php';
                 <div class="bf-row">
                     <div class="bf-col-lg-12">
                         <h5>Anmerkungen</h5>
-                        <textarea name="messages" id="messages" cols="45" rows="5"></textarea>
+                        <textarea name="messages" id="messages" cols="40" rows="5"></textarea>
                     </div>
                 </div>
                 <div class="bf-row">

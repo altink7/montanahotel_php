@@ -165,6 +165,7 @@ body {
   background-image: url(../img/banner.png);
   background-size: cover;
   padding: 5%;
+  
 }
 
 .contact {
@@ -236,4 +237,9 @@ footer ul li a {
 footer ul li a:hover {
   color: white;
   text-decoration: underline 2px;
+}
+.hrRooms{
+  width:40%;
+  margin-left:30%;
+  border-top: 3px solid #5890b3;
 }

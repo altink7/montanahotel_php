@@ -37,7 +37,9 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
-		<br><br><br>
+		<br>
+		<hr class="hrRooms">
+		<br>
 
         <div class="row">
             <div class="col-lg-1"></div>
@@ -64,7 +66,9 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
-		<br><br><br>
+		<br>
+		<hr class="hrRooms">
+		<br>
     
     <div class="row">
         <div class="col-lg-1"></div>
@@ -91,7 +95,9 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 			</div>
             <div class="col-lg-1"></div>
 		</div>
-		<br><br><br>
+		<br>
+		<hr class="hrRooms">
+		<br>
 
         <div class="row">
             <div class="col-lg-1"></div>

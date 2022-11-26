@@ -33,32 +33,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         
             <div class="row">
-                <div class="col-lg-4"></div>
-                <div class="col-lg-1">
+                <div class="col-lg-12">
                     <h5><input type="text" class="field field1" placeholder="Name" name="name" id="name required"></h5>
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1">
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
                     <h5> <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email"></h5>
                  </div>
-                <div class="col-lg-3"></div>
             </div>
-                <div class="row">
-                    <div class="col-lg-4"></div>
-                <div class="col-lg-1">
+
+            <div class="row">
+                <div class="col-lg-12">
                     <h5><input type="text" class="field field3" placeholder="Telefonnummer" name="telefonnummer" id="felefonnummer"></h5>
                 </div>
-                <div class="col-lg-1"></div>
-                <div class="col-lg-1">
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
                     <h5><input type="text" class="field field4" placeholder="Buchungsnummer" name="buchungsnummer" id="buchungsnummer"></h5>
                 </div>
-                <div class="col-lg-3"></div>
              </div>
              <br>
+
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Wie können wir Ihnen helfen?</h5>
-                    <textarea name="messages" id="messages" cols="45" rows="5"></textarea>
+                    <textarea name="messages" id="messages" cols="40" rows="5"></textarea>
                 </div>
                 <div class="col-lg-12">
                     <input type="submit" value="Absenden">

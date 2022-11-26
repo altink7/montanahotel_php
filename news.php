@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <div class="Form">
     <div class="contact text-center">
-        <h1 class="kontaktieren">Beiträge</h1><hr>
+        <h1 class="kontaktieren">Beiträge</h1><hr style="width:60%;margin-left:20%;">
         <img src="img/food.png" width="150" height="150">
                 <div class="col-lg-12">
                 <h2>Ich bin begeistert</h2>
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <p>Eines der schönsten Hotels in denen ich jemals war. Sehr nettes Personal, vor allem die Geschäftsführer. Auch das Essen war eine 10 von 10</p>
                 </div>
                 <div class="col-lg-3"></div><br>
-                </div><hr>
+                </div><hr style="width:60%;margin-left:20%;">
                 <div class="col-lg-12">
                 <img <?php echo 'src="upload/' . $picture . '"'; ?> alt=" " width="150" height="150">
                 </div><br>
