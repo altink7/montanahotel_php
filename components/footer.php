@@ -9,3 +9,4 @@
             <li> <a href="index.php"> <img src="img/logo.png" width="80" height="70"></a> </li>
         </ul>
     </footer>
+    </body>

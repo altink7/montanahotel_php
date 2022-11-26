@@ -24,12 +24,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-<div class="bgForms">
-<br><br>
+<div class="Form">
     <div class="contact text-center">
         <h1 class="kontaktieren">Beiträge</h1><hr>
         <img src="img/food.png" width="150" height="150">
-            <br><br>
                 <div class="col-lg-12">
                 <h2>Ich bin begeistert</h2>
                 </div>
@@ -54,9 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-lg-3"></div><br>
             </div>
         </div>
-        <br><br>
+       
     </div>
-    <br><br><br>
 
 
 

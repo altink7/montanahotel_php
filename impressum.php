@@ -6,8 +6,8 @@ include 'components/nav.php';
 ?>
    
     <section>
-    <div class="bgForms">
-    <br><br><br>
+    <div class="Form">
+    
     <div class="contact text-center">
         <h1 class="kontaktieren">Impressum</h1><br>
                 <div class="col-lg-12">
@@ -36,7 +36,7 @@ include 'components/nav.php';
                 </div>
             </div>
         </div>
-        <br><br><br>
+        
     <?php
     include 'components/footer.php';
     ?>

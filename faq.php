@@ -3,8 +3,7 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 ?>
-<div class="bgForms">
-<br><br><br>
+<div class="Form">
     <div class="contact text-center">
         <h1 class="kontaktieren">FAQs</h1><br>
                 <div class="col-lg-12">
@@ -25,7 +24,6 @@ include 'components/nav.php';
             </div>
         </div>
     </div>
-    <br><br><br>
     <?php
     include 'components/footer.php';
     ?>

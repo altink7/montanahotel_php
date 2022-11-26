@@ -6,7 +6,7 @@ include 'components/nav.php';
 
 ?>
 
-<br><br><br>
+<div class="Form">
     <div class="bf-container text-center">
         <div class="bf-body">
             <div class="bf-head">
@@ -55,7 +55,7 @@ include 'components/nav.php';
            
         </div>
     </div>
-<br><br><br>
+</div>
 <?php
 include 'components/footer.php';
 ?>
