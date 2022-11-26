@@ -9,7 +9,7 @@ include 'components/nav.php';
 <div class="contact text-center">
     <h1 class="kontaktieren">Datenschutzerklärung</h1>
     <hr>
-    <div class="row">
+    <div class="row" style="padding: 1%;">
         <div class="col-lg-2"></div>
         <div class="col-lg-8">
             <h4>Rechtsgrundlage Einwilligung</h4>

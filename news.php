@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="col-lg-3"></div><br>
                 </div><hr>
                 <div class="col-lg-12">
-                <img <?php echo 'src="upload/' . $picture . '"'; ?> alt="IMAGE" width="150" height="150">
+                <img <?php echo 'src="upload/' . $picture . '"'; ?> alt=" " width="150" height="150">
                 </div><br>
                 <div class="col-lg-12">
                 <h2><?php echo $title; ?></h2>

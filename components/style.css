@@ -68,7 +68,7 @@ body {
 }
 
 .foodimg {
-  width: 100%;
+  width: 30%;
   margin-top: 60px;
   padding-left: 80px;
   padding-right: 10%;
@@ -164,6 +164,12 @@ body {
 .Form{
   background-image: url(../img/banner.png);
   background-size: cover;
+  padding: 5%;
+}
+
+.contact {
+  background-color: #5890b3;
+  color: white;
   padding-top: 5%;
   padding-bottom: 5%;
 }

@@ -31,24 +31,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="contact text-center">
         <h1 class="kontaktieren">Kontaktieren Sie uns!</h1><br>
         
+        
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-lg-3">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-1">
                     <h5><input type="text" class="field field1" placeholder="Name" name="name" id="name required"></h5>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-3">
+                <div class="col-lg-1">
                     <h5> <input type="email" class="field field2" placeholder="E-Mail-Adresse" name="email" id="email"></h5>
                  </div>
                 <div class="col-lg-3"></div>
             </div>
                 <div class="row">
-                    <div class="col-lg-2"></div>
-                <div class="col-lg-3">
+                    <div class="col-lg-4"></div>
+                <div class="col-lg-1">
                     <h5><input type="text" class="field field3" placeholder="Telefonnummer" name="telefonnummer" id="felefonnummer"></h5>
                 </div>
                 <div class="col-lg-1"></div>
-                <div class="col-lg-3">
+                <div class="col-lg-1">
                     <h5><input type="text" class="field field4" placeholder="Buchungsnummer" name="buchungsnummer" id="buchungsnummer"></h5>
                 </div>
                 <div class="col-lg-3"></div>
