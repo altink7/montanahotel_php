@@ -212,7 +212,7 @@ footer {
 
 
 footer:hover {
-  background-color: #5890b3;
+  background-color: rgb(88, 144, 179);
 }
 
 footer ul {
@@ -239,7 +239,10 @@ footer ul li a:hover {
   text-decoration: underline 2px;
 }
 .hrRooms{
-  width:40%;
-  margin-left:30%;
-  border-top: 3px solid #5890b3;
+  width:80%;
+  margin-left:10%;
+  border: 0;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(88, 144, 179), rgba(0, 0, 0, 0));
+
 }
