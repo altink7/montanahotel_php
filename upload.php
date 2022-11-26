@@ -13,7 +13,6 @@
         $file_size = $_FILES['picture']['size'];
         $file_tmp = $_FILES['picture']['tmp_name'];
         $file_type = $_FILES['picture']['type'];
-        $file_ext=strtolower(end(explode('.',$_FILES['picture']['name'])));
         
         $expensions= array("jpeg","jpg","png");
         

@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<body>
 <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.php"> <img src="img/logo.png" width="80" height="70"></a>
