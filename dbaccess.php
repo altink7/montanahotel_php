@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "montanauser";
-$password = "montana123";
+$password_db = "montana123";
 $database= "montanadb";
 
 ?>

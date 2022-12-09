@@ -1,22 +1,15 @@
 <?php
+session_start();
+require_once('dbaccess.php');
 
-$name=$_POST['name'];
-$email=$_POST['email'];
-$country=$_POST['country'];
-$address=$_POST['address'];
-$password  =$_POST['password'];
+$username=$_POST['vorname'];
+$useremail=$_POST['email'];
+$password  =password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+$conn = new mysqli($host, $user, $password_global, $database);
 
-$servername= 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'montanadb';
-
-//$mysqli = new mysqli("localhost", "username", "password", "dbname");
-
-$conn = new mysqli($servername, $username, $password, $dbname);
 echo "Connection successful!" . "<bc>";
-$sql = "INSERT INTO kunde (name, email, country, address, password) VALUES ('$name', '$email','$country','$address','$password')";
+$sql = "INSERT INTO users (username, useremail, password) VALUES ('$username', '$useremail','$password_db')";
 
 if($conn->query($sql) === TRUE){
  echo "New record created successfully";

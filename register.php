@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['passwordError']= "Passwörter müssen gleich sein!";
     }
 
-    //if(empty($errors)){
-    //header('Location: profil.php'); 
-    //}
+    if(empty($errors)){
+    header('Location: submit.php'); 
+    }
 }
 ?>
 
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-            <form method="post" action="register.php">
+            <form method="post" action="submit.php">
 
 
                 <label for="name">Name:</label><br>
