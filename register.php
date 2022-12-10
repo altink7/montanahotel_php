@@ -15,6 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         $errors['nameError']="Name darf nicht leer sein!";
     }
+    if(!empty($_POST["username"])){
+        $nachname = $_POST["user    name"];
+    }else{
+        $errors['usernameError']="Username darf nicht leer sein!";
+    }
 
     if (!empty($_POST["email"])) {
     $email = $_POST["email"];
@@ -67,6 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="name">Name:</label><br>
                 <input type="text" name="vorname" id="name" placeholder="John Doe"
                     pattern="^([\p{Lu}\p{Lt}]\p{Ll}+)\s([\p{Lu}\p{Lt}]\p{Ll}+)+$" size="20" autofocus="">
+                <br>
+                <label for="username">Username:</label> <br>
+                <input type="text" name="username" id="username" placeholder="john.doe" size="20">
                 <br>
                 <label for="email">E-Mail-Adresse:</label><br>
                 <input type="email" name="email" id="email" placeholder="john.doe@gmail.com">

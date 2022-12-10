@@ -2,7 +2,7 @@
 session_start();
 require_once('dbaccess.php');
 
-$username=$_POST['vorname'];
+$username=$_POST['username'];
 $useremail=$_POST['email'];
 $password  =password_hash($_POST['password'], PASSWORD_DEFAULT);
 
@@ -18,4 +18,5 @@ if($conn->query($sql) === TRUE){
 }
 
 $conn->close();
+header('Location: index.php')
 ?>
