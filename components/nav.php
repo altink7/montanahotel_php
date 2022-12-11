@@ -10,11 +10,20 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-evenly text-center" id="navbarSupportedContent">
                 <a class="nav-link <?php echo($page =='news'?'active':'') ?>" href="news.php">News</a>
+
                 <a class="nav-link <?php echo($page =='about'?'active':'') ?>" href="about.php">Über Uns</a>
-                <a class="nav-link <?php echo($page =='login'?'active':'') ?>" href="login.php">Login</a>
+
                 <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true){
                     echo '<a class="nav-link '.($page =="profil"?"active":"").'" href="profil.php">Profil</a>';
                 }?>
+
+                <?php if (!isset($_SESSION["loggedin"])): ?>
+                    <a class="nav-link <?php echo($page =='login'?'active':'') ?>" href="login.php">Login</a>
+                <?php else: ?>
+                <a class="nav-link" href="login.php?logout=true">Logout</a>
+                <?php endif; ?>
+
+        
             
                 </div>
             </div>
