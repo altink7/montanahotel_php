@@ -2,10 +2,8 @@
 $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
+require_once('dbaccess.php');
 
-
-
-$fromdate = $todate = $zimmer = $breakfast = $parking = $pets = "";
 
 $fehler1 = $fehler2 = "";
 if (!(empty($_GET["username"]) && empty($_GET["password"]))) {
@@ -24,62 +22,6 @@ if (!(empty($_GET["username"]) && empty($_GET["password"]))) {
 
 $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (
-        empty($_SESSION["fromdate"]) || end($_SESSION["fromdate"]) != $_POST['from-date'] ||
-        end($_SESSION["todate"]) != $_POST['to-date']
-    ) {
-
-        if (empty($_SESSION["fromdate"])) {
-            $_SESSION["fromdate"] = array();
-            $_SESSION["fromdate"][] = $_POST['from-date'];
-        } else {
-            $_SESSION["fromdate"][] = $_POST['from-date'];
-        }
-
-        if (empty($_SESSION["todate"])) {
-            $_SESSION["todate"] = array();
-            $_SESSION["todate"][] = $_POST['to-date'];
-        } else {
-            $_SESSION["todate"][] = $_POST['to-date'];
-        }
-
-        if (empty($_SESSION["zimmer"])) {
-            $_SESSION["zimmer"] = array();
-            $_SESSION["zimmer"][] = $_POST['room-select'];
-        } else {
-            $_SESSION["zimmer"][] = $_POST['room-select'];
-        }
-
-        if (empty($_SESSION["breakfast"]) && isset($_POST['breakfast'])) {
-            $_SESSION["breakfast"] = array();
-            $_SESSION["breakfast"][] = 'Ja';
-        } else if (isset($_POST['breakfast'])) {
-            $_SESSION["breakfast"][] = 'Ja';
-        } else {
-            $_SESSION["breakfast"][] = 'Nein';
-        }
-
-        if (empty($_SESSION["parking"]) && isset($_POST['parking'])) {
-            $_SESSION["parking"] = array();
-            $_SESSION["parking"][] = 'Ja';
-        } else if (isset($_POST['parking'])) {
-            $_SESSION["parking"][] = 'Ja';
-        } else {
-            $_SESSION["parking"][] = 'Nein';
-        }
-
-        if (empty($_SESSION["pets"]) && isset($_POST['pets'])) {
-            $_SESSION["pets"] = array();
-            $_SESSION["pets"][] = 'Ja';
-        } else if (isset($_POST['pets'])) {
-            $_SESSION["pets"][] = 'Ja';
-        } else {
-            $_SESSION["pets"][] = 'Nein';
-        }
-    }
-}
 
 
 ?>
@@ -156,28 +98,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </thead>
                 <tbody>
                     <?php
-                    //check if array is empty
-                    if (!empty($_SESSION["fromdate"])) {
-                        foreach ($_SESSION["fromdate"] as $key => $value) {
-                            echo "<tr>";
-                            echo "<th scope='row'>" . ($key + 1) . "</th>";
-                            echo "<td>" . $value . "</td>";
-                            echo "<td>" . $_SESSION["todate"][$key] . "</td>";
-                            echo "<td>" . $_SESSION["zimmer"][$key] . "</td>";
-                            echo "</tr>";
-                            echo "<tr>";
-                            //if this is the last element of the array then th is new
-                            if ($key == count($_SESSION["fromdate"]) - 1) {
-                                echo "<th scope='row'>Neu</th>";
-                            } else {
-                                echo "<th scope='row'>bestätigt</th>";
-                            }
-                            echo "<td> Frühtück:" . $_SESSION["breakfast"][$key] . "</td>";
-                            echo "<td> Parking:" . $_SESSION["parking"][$key] . "</td>";
-                            echo "<td> Tiere:" . $_SESSION["pets"][$key] . "</td>";
-                            echo "</tr>";
-                        }
-                    } ?>
+                    $conn = new mysqli($host, $user, $password_db, $database);
+                    $result = mysqli_query($conn, "SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'");
+                    $row = mysqli_fetch_assoc($result);
+                    $id=$row['id'];
+
+                    $sql = "SELECT * FROM rooms WHERE user_fk = $id";
+                    $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
+                    $i = 1;
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo "<tr>";
+                        echo "<th scope=row>" . $i . "</th>";
+                        echo "<td>" . $row["anreisedatum"] . "</td>";
+                        echo "<td>" . $row["abreisedatum"] . "</td>";
+                        echo "<td>" . $row["zimmer"] . "</td>";
+                        echo "</tr>";
+
+                        echo "<th scope='row'>#</th>";
+                        echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
+                        echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
+                        echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";
+                        echo "</tr>";
+                        $i++;
+
+                    }
+
+                     ?>
                 </tbody>
             </table>
             <hr style="border:20px solid;">
