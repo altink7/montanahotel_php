@@ -99,9 +99,10 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                 <tbody>
                     <?php
                     $conn = new mysqli($host, $user, $password_db, $database);
-                    $result = mysqli_query($conn, "SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'");
-                    $row = mysqli_fetch_assoc($result);
-                    $id=$row['id'];
+                    $result = mysqli_query($conn, "SELECT id, admin FROM users WHERE username = '" . $_SESSION["username"] . "'");
+                    $rowhead = mysqli_fetch_assoc($result);
+                    $id=$rowhead['id'];
+                    $admin=$rowhead['admin'];
 
                     $sql = "SELECT * FROM rooms WHERE user_fk = $id";
                     $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
@@ -126,6 +127,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                      ?>
                 </tbody>
             </table>
+            <?php if ($admin==1) : ?>
             <hr style="border:20px solid;">
             <h1 class="kontaktieren">Beiträge verfassen</h1>
             <hr>
@@ -142,6 +144,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                     <textarea type="text" name="text" id="text" placeholder="Ihr Beitrag" cols="40" rows="5"></textarea>
                 </div>
                 <button class="btn btn-primary" style="margin-top: 3%;" type="submit">Veröffentlichen</button>
+            <?php endif ?>
         </div>
     </div>
 </div>
