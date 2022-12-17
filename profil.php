@@ -7,11 +7,17 @@ require_once('dbaccess.php');
 
 $fehler1 = $fehler2 = "";
 if (!(empty($_GET["username"]) && empty($_GET["password"]))) {
-    if ($_SESSION["password"] == $_GET["password"]) {
+    $sql = "SELECT password FROM users WHERE username = '" . $_SESSION["username"] . "'";
+    $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    echo $row["password"];
+
+    if(password_verify( $_GET["password"],$row["password"])){
         if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
-            $sql = "UPDATE users SET password = '" . $_GET["newPassword"] . "' WHERE username = '" . $_SESSION["username"] . "'";
+            $sql = "UPDATE users SET password = '" . password_hash($_GET["newPassword"],PASSWORD_DEFAULT) . "' WHERE username = '" . $_SESSION["username"] . "'";
             $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
-            $_SESSION["password"] = $_GET["newPassword"];
+            $row = mysqli_fetch_assoc($result);
         } else {
             $fehler1 = "die neuen Passwörter stimmen nicht überein";
         }
@@ -59,7 +65,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
 
                     <?php if ($changeValue): ?>
                     <tr>
-                        <form method="put" action="login.php">
+                        <form method="put" action="profil.php">
                             <th scope=row>New</th>
                             <td>
                                 <input type="text" name="username" id="usernameInput">
