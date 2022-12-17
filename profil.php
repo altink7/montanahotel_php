@@ -11,13 +11,13 @@ if (!(empty($_GET["username"]) && empty($_GET["password"]))) {
     $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
     $row = mysqli_fetch_assoc($result);
 
-    echo $row["password"];
-
     if(password_verify( $_GET["password"],$row["password"])){
         if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
-            $sql = "UPDATE users SET password = '" . password_hash($_GET["newPassword"],PASSWORD_DEFAULT) . "' WHERE username = '" . $_SESSION["username"] . "'";
+            $sql = "UPDATE `users` SET `username` ='".$_GET['username']."',
+            `password` = '".password_hash($_GET["newPassword"],PASSWORD_DEFAULT)."'
+            WHERE `username` = '" . $_SESSION["username"] . "'";
+            $_SESSION['username'] = $_GET['username'];
             $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
-            $row = mysqli_fetch_assoc($result);
         } else {
             $fehler1 = "die neuen Passwörter stimmen nicht überein";
         }
@@ -100,6 +100,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                         <th scope="col">Anreisedatum</th>
                         <th scope="col">Abreisedatum</th>
                         <th scope="col">Zimmer</th>
+                        <th scope="col">Preis</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -125,6 +126,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                         echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";
+                        echo "<td>" . $row['preis']." €</td>";
                         echo "</tr>";
                         $i++;
 

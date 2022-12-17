@@ -4,7 +4,8 @@ include 'components/head.php';
 include 'components/nav.php';
 require_once('dbaccess.php');
 
-$fromdate = $todate = $zimmer = "";
+$fromdate = $todate = $zimmer ="";
+$preis= 0;
 $conn = new mysqli($host, $user, $password_db, $database);
 $errors = array();
 
@@ -29,12 +30,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pets = empty($_POST['pets'])? 0 : 1;
 
     if (empty($errors)) {
+        $date1 = new DateTime($fromdate);
+        $date2= new DateTime($todate);
+        $interval = date_diff($date1, $date2);
+        if($interval->format('%R%a')<0){
+            $errors['dateError'] = "Das Abreisedatum muss nach dem Anreisedatum liegen!";
+        
+            }
+        }
+            if(empty($errors)){	
+                if($zimmer == "Mountain Sweet"){
+                    $preis = 100;
+                }else if($zimmer == "Mountain View"){
+                    $preis = 120;
+                } else if ($zimmer == "Mountain Deluxe") {
+                    $preis = 300;
+                } else if ($zimmer == "Mountain Suite") {
+                    $preis = 200;
+                }
+                ($breakfast == 1) ? $preis += 15 : $preis;
+                ($parking == 1) ? $preis += 10 : $preis;
+
+                $preis *= $interval -> format('%R%a');
+
         $result = mysqli_query($conn, "SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'");
         $row = mysqli_fetch_assoc($result);
         $id=$row['id'];
     
-        $sql = "INSERT INTO `rooms`( `anreisedatum`, `abreisedatum`, `zimmer`, `fruehstueck`, `parkplatz`, `haustier`, `user_fk`)
-         VALUES ('$fromdate', '$todate', '$zimmer', '$breakfast', '$parking', '$pets',$id)";
+        $sql = "INSERT INTO `rooms`( `anreisedatum`, `abreisedatum`, `zimmer`, `fruehstueck`, `parkplatz`, `haustier`, `user_fk`,`preis`)
+         VALUES ('$fromdate', '$todate', '$zimmer', '$breakfast', '$parking', '$pets',$id,$preis)";
 
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";

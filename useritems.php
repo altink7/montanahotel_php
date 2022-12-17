@@ -72,6 +72,7 @@ if ($userid) {
                         <th scope="col">Anreisedatum</th>
                         <th scope="col">Abreisedatum</th>
                         <th scope="col">Zimmer</th>
+                        <th scope="col">Preis</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -91,12 +92,14 @@ if ($userid) {
                         echo "<td>" . $row["anreisedatum"] . "</td>";
                         echo "<td>" . $row["abreisedatum"] . "</td>";
                         echo "<td>" . $row["zimmer"] . "</td>";
+
                         echo "</tr>";
 
                         echo "<th scope='row'>#</th>";
                         echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";
+                        echo "<td>" . $row['preis']." €</td>";
                         echo "</tr>";
                         $i++;
 
