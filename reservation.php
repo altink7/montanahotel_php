@@ -41,11 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(empty($errors)){	
                 if($zimmer == "Mountain Sweet"){
                     $preis = 100;
-                }else if($zimmer == "Mountain View"){
+                }else if($zimmer == "Ozean Sweet"){
                     $preis = 120;
-                } else if ($zimmer == "Mountain Deluxe") {
+                } else if ($zimmer == "Deluxe Villa") {
                     $preis = 300;
-                } else if ($zimmer == "Mountain Suite") {
+                } else if ($zimmer == "Ozean Villa") {
                     $preis = 200;
                 }
                 ($breakfast == 1) ? $preis += 15 : $preis;
