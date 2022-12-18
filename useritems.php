@@ -3,9 +3,15 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 
-$userid = empty($_GET["userid"]) ? false : $_GET["userid"];
+$userid = "";
 
-if ($userid) {
+if((empty($_GET["userid"]))){
+} else{
+    $_SESSION["changeUserid"] = $_GET["userid"];
+}
+
+if (!(empty($_SESSION["changeUserid"]))) {
+    $userid = $_SESSION["changeUserid"];
     $sql = "SELECT * FROM users WHERE id = $userid";
     $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
     $row = mysqli_fetch_assoc($result);
@@ -15,6 +21,26 @@ if ($userid) {
     $id = $row["id"];
 }
 
+$fehler1 = "";
+if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
+    $sql = "SELECT password FROM users WHERE username = '" . $username . "'";
+    $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
+    $row = mysqli_fetch_assoc($result);
+
+        if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
+            $sql = "UPDATE `users`
+             SET `username` ='".$_GET['username']."',
+            `password` = '".password_hash($_GET["newPassword"],PASSWORD_DEFAULT)."',
+            `status` = '".(empty($_GET['status'])?'0':'1')."'
+            WHERE `username` = '" . $username . "'";
+            $username = $_GET['username'];
+            $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
+        } else {
+            $fehler1 = "die neuen Passwörter stimmen nicht überein";
+        }
+
+        header("Location: useritems.php");
+   }
 ?>
 
 <div class='Form'>
@@ -27,6 +53,7 @@ if ($userid) {
                         <th scope='col'>Name</th>
                         <th scope='col'>Password</th>
                         <th scope='col'>Status</th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,26 +70,31 @@ if ($userid) {
                         <td>
                             <?php echo ($status ? "aktiv" : "inaktiv") ?> 
                         </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <form method="put" action="useritems.php">
+                            <th scope=row>New</th>
+                            <td>
+                                <input type="text" name="username" id="usernameInput">
+                            </td>
+                            <td>
+                                <input type="password" name="newPassword" id="newPassword" minlength="8"
+                                    placeholder="neues Passwort"> <br>
+                                <input type="password" name="newPasswordConfirmed" id="newPasswordConfirmed"
+                                    minlength="8" placeholder="Passwort bestätigen"> 
+                            </td>
+                            <td>
+                                <input type="checkbox" name="status" id="status" value="1"> <br>
+                            </td>
+                                <br>
+                            </td>
+                            <td> <button class="btn btn-primary" type="submit">Bestätigen</button> </td>
+                        </form>
                     </tr>
                 </tbody>
             </table>
-        
         <?php
-if ($userid) {
-    ?>
-        <form action="" method="post">
-            <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="username" value="username">
-            <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" name="password" value="password">
-            <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" name="status" value="1">
-            <input type="hidden" name="id" value="<?php echo $id ?>">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    <?php
-}
 ?>
 <table class="reservierung-table">
                 <thead class="thead-light">

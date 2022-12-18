@@ -32,12 +32,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "SELECT * FROM users WHERE username = '$username'";
         $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
         $user = mysqli_fetch_assoc($result);
+
         if ($user && password_verify($password, $user['password'])) {
-            $_SESSION["username"] = $user["username"];
-            ;
-            $_SESSION["loggedin"] = true;
-            header('Location: index.php');
-        } else {
+            if ($user['status'] == 1) {
+                $_SESSION["username"] = $user["username"];
+                ;
+                $_SESSION["loggedin"] = true;
+                header('Location: index.php');
+            } else {
+                $errors['loginError'] = "User ist inaktiv!";
+            }
+        }else {
             $errors['loginError'] = "Username oder Passwort ist falsch!";
         }
     }
