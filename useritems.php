@@ -23,10 +23,6 @@ if (!(empty($_SESSION["changeUserid"]))) {
 
 $fehler1 = "";
 if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
-    $sql = "SELECT password FROM users WHERE username = '" . $username . "'";
-    $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
-    $row = mysqli_fetch_assoc($result);
-
         if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
             $sql = "UPDATE `users`
              SET `username` ='".$_GET['username']."',
