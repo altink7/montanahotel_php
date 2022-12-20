@@ -24,7 +24,7 @@
       Impressum, FAQ, Kontakt und Datenschutz Seiten sind jederzeit im Footer aufrufbar. 
     
     * Technische Umsetzung und Design: \
-      Altin Kelmendi - wi21b054
+      Altin Kelmendi - wi21b054 \
       Julian Hoffmann - wi21b050
     
    
