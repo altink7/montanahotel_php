@@ -61,7 +61,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                             <?php echo $username ?> 
                         </td>
                         <td>
-                            <?php echo str_repeat("&bull;", strlen($password)) ?> 
+                            <?php echo str_repeat("&bull;", 8) ?> 
                         </td>
                         <td>
                             <?php echo ($status ? "aktiv" : "inaktiv") ?> 
@@ -120,14 +120,14 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                         echo "<td>" . $row["anreisedatum"] . "</td>";
                         echo "<td>" . $row["abreisedatum"] . "</td>";
                         echo "<td>" . $row["zimmer"] . "</td>";
-
                         echo "</tr>";
 
-                        echo "<th scope='row'>#</th>";
+                        echo "<td style=\"font-size:10px;\" scope='row'>".$row['zeit']."</td>";
                         echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";
                         echo "<td>" . $row['preis']." €</td>";
+
                         echo "</tr>";
                         $i++;
 

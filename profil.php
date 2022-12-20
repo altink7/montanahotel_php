@@ -58,7 +58,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                             <?php echo $_SESSION["username"] ?>
                         </td>
                         <td>
-                            <?php echo str_repeat("&bull;", strlen("password")) ?>
+                            <?php echo str_repeat("&bull;", 8) ?>
                         </td>
                         <td><a class="btn btn-primary" href="?change=true">Daten ändern</a> </td>
                     </tr>
@@ -122,7 +122,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                         echo "<td>" . $row["zimmer"] . "</td>";
                         echo "</tr>";
 
-                        echo "<th scope='row'>#</th>";
+                        echo "<td style=\"font-size:10px;\" scope='row'>".$row['zeit']."</td>";
                         echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";

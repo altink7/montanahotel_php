@@ -33,10 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $date1 = new DateTime($fromdate);
         $date2= new DateTime($todate);
         $interval = date_diff($date1, $date2);
-        if($interval->format('%R%a')<0){
+        if($interval->format('%R%a')<=0){
             $errors['dateError'] = "Das Abreisedatum muss nach dem Anreisedatum liegen!";
-        
             }
+        //check availability
+        $result = mysqli_query($conn, "SELECT * FROM rooms WHERE zimmer = '" . $zimmer . "' 
+        AND (anreisedatum BETWEEN '" . $fromdate . "' AND '" . $todate . "' OR abreisedatum BETWEEN '" . $fromdate . "' AND
+         '" . $todate . "')");
+        if (mysqli_num_rows($result) > 0) {
+            $errors['roomError'] = "Das Zimmer ist leider nicht verfügbar!";
+        }
         }
             if(empty($errors)){	
                 if($zimmer == "Mountain Sweet"){

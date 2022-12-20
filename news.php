@@ -9,11 +9,9 @@ $errors = array();
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_FILES['picture']) && $_FILES['picture']['error'] == 0) {
-        $picture = $_FILES['picture']['name'];
-        $target = 'images/' . $picture;
-        move_uploaded_file($_FILES['picture']['tmp_name'], 'upload/' . $_FILES['picture']['name']);
-        $picture = $_FILES['picture']['name'][''];
+    if (!empty($_FILES["picture"])) {
+        $picture = $_FILES["picture"];
+        $imgContent = addslashes(file_get_contents($picture['tmp_name']));
     } else {
         $errors['pictureError'] = "Bild darf nicht leer sein!";
     }
@@ -34,9 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         $id=$row['id'];
 
-
-
-        $sql = "INSERT INTO `news`( `bild`, `titel`, `beitrag`, `user_fk`) VALUES ('$picture', '$title', '$text', '$id')";
+        $sql = "INSERT INTO `news`( `bild`, `titel`, `beitrag`, `user_fk`, `zeit`) VALUES ('$imgContent', '$title', '$text', '$id', NOW())";
 
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
@@ -53,20 +49,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="Form">
     <div class="contact text-center">
         <h1 class="kontaktieren">Beiträge</h1>
-        <hr style="width:60%;margin-left:20%;">
-        <img src="img/food.png" width="150" height="150">
-        <div class="col-lg-12">
-            <h2>Ich bin begeistert</h2>
-        </div>
-        <div class="row">
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6">
-                <p>Eines der schönsten Hotels in denen ich jemals war. Sehr nettes Personal, vor allem die
-                    Geschäftsführer. Auch das Essen war eine 10 von 10</p>
-            </div>
-            <div class="col-lg-3"></div><br>
+        <?php
+        $sql = "SELECT * FROM news order by zeit desc";
+        $result = $conn->query($sql);
+        if (!empty($result)) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="row">';
+                echo '<div class="col-lg-3"></div>';
+                echo '<div class="col-lg-6">';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '" width="150" height="150">';
+                echo '<h2>' . $row['titel'] . '</h2>';
+                echo '<p>' . $row['beitrag'] . '</p>';
+                echo '<p style="font-size:10px;">' . $row['zeit'] . '</p>';
+                echo '</div>';
+                echo '<div class="col-lg-3"></div>';
+                echo '</div>';
+                echo '<hr style="width:60%;margin-left:20%;">';
+            }
 
-        </div>
+        } else {
+            echo "0 results";
+        }
+        ?>
         <?php
             if (!empty($errors)) {
                 echo '<div class="alert alert-danger">';
