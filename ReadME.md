@@ -32,5 +32,6 @@
     
 
 
+# ER-Modell:
 
-
+![DB](https://user-images.githubusercontent.com/105012851/208745139-86449b88-9fee-4f78-80f3-d84d49e41582.png)
