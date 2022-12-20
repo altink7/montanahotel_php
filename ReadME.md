@@ -1,8 +1,12 @@
 #WebTech Projekt
 
-* Autoren:
-    @altink7
-    @realhoffmann
+* Autoren: \
+    **Altin Kelmendi** \
+    **Julian Hoffmann**\
+    
+    Bei unserem Website
+    
+    
 
 
 
