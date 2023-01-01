@@ -27,25 +27,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     //Serverseitige Überprüfung von den eingegebenen Daten END
 
-    //login and set session if user is already registered
-    if (empty($errors)) {
-        $sql = "SELECT * FROM users WHERE username = '$username'";
-        $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
-        $user = mysqli_fetch_assoc($result);
 
+    if (empty($errors)) {
+        $conn = new mysqli($host, $user, $password_db, $database);
+        $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?");
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $user = mysqli_fetch_assoc($result);
+    
         if ($user && password_verify($password, $user['password'])) {
             if ($user['status'] == 1) {
                 $_SESSION["username"] = $user["username"];
-                ;
                 $_SESSION["loggedin"] = true;
                 header('Location: index.php');
             } else {
                 $errors['loginError'] = "User ist inaktiv!";
             }
-        }else {
+        } else {
             $errors['loginError'] = "Username oder Passwort ist falsch!";
         }
     }
+    $conn->close();
+    $stmt->close();
 }
 
 ?>

@@ -59,18 +59,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 $preis *= $interval -> format('%R%a');
 
-        $result = mysqli_query($conn, "SELECT id FROM users WHERE username = '" . $_SESSION["username"] . "'");
-        $row = mysqli_fetch_assoc($result);
-        $id=$row['id'];
-    
-        $sql = "INSERT INTO `rooms`( `anreisedatum`, `abreisedatum`, `zimmer`, `fruehstueck`, `parkplatz`, `haustier`, `user_fk`,`preis`)
-         VALUES ('$fromdate', '$todate', '$zimmer', '$breakfast', '$parking', '$pets',$id,$preis)";
+                $stmt = $conn->prepare("SELECT id FROM users WHERE username = ?");
+                $stmt->bind_param("s", $_SESSION["username"]);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $row = $result->fetch_assoc();
+                $id = $row['id'];
+                $stmt->close();
+                
+                $stmt = $conn->prepare("INSERT INTO `rooms`
+                    (`anreisedatum`, `abreisedatum`, `zimmer`, `fruehstueck`, `parkplatz`, `haustier`, `user_fk`, `preis`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssiiisi", $fromdate, $todate, $zimmer, $breakfast, $parking, $pets, $id, $preis);
+                $stmt->execute();
+                $stmt->close();
+                $conn->close();
 
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-            echo "<bc> Error: " . $sql . "<br>" . $conn->error;
-        }
         header("Location: profil.php");
     }
 
