@@ -6,17 +6,25 @@ $username=$_POST['username'];
 $useremail=$_POST['email'];
 $password  =password_hash($_POST['password'], PASSWORD_DEFAULT);
 
+// Connect to the database
 $conn = new mysqli($host, $user, $password_db, $database);
 
-echo "Connection successful!" . "<bc>";
-$sql = "INSERT INTO users (username, useremail, password, admin, status) VALUES ('$username', '$useremail','$password', 0, 1)";
+// Prepare the INSERT statement to insert a new record into the "users" table
+$stmt = $conn->prepare("INSERT INTO users (username, useremail, password, admin, status) VALUES (?, ?, ?, 0, 1)");
 
-if($conn->query($sql) === TRUE){
- echo "New record created successfully";
+// Bind the values to the placeholders in the query
+$stmt->bind_param("sss", $username, $useremail, $password);
+
+// Execute the statement
+if ($stmt->execute()) {
+    echo "New record created successfully";
 } else {
- echo "<bc> Error: " .  $sql . "<br>" . $conn->error;
+    echo "Error: " . $stmt->error;
 }
 
+// Close the prepared statement
+$stmt->close();
+
 $conn->close();
-header('Location: index.php')
+header('Location: login.php')
 ?>
