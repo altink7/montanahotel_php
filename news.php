@@ -39,6 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             echo "<bc> Error: " . $sql . "<br>" . $conn->error;
         }
+        $conn->close();
     }
 
 
@@ -50,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="contact text-center">
         <h1 class="kontaktieren">Beiträge</h1>
         <?php
+        $conn = new mysqli($host, $user, $password_db, $database);
         $sql = "SELECT * FROM news order by zeit desc";
         $result = $conn->query($sql);
         if (!empty($result)) {
