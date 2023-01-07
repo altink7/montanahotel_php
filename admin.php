@@ -11,10 +11,10 @@ include 'components/nav.php';
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Password</th>
-                        <th scope="col">Status</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,7 +27,7 @@ include 'components/nav.php';
                     while ($row = $result->fetch_assoc()) {
                         $id = $row["id"];
                         echo "<tr>";
-                        echo "<th scope=row>" . $id . "</th>";
+                        echo "<th>" . $id . "</th>";
                         echo "<td>" . $row["username"] . "</td>";
                         echo "<td>" . str_repeat("&bull;", 8) . "</td>";
                         echo "<td>" . ($row["status"] ? "aktiv" : "inaktiv") . "</td>";
@@ -45,9 +45,9 @@ include 'components/nav.php';
                 <thead class="thead-light">
                     <h1>Reservierungen</h1>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Zimmer</th>
-                        <th scope="col">Benutzer</th>
+                        <th>#</th>
+                        <th>Zimmer</th>
+                        <th>Benutzer</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,7 +66,7 @@ include 'components/nav.php';
                         $user_room = $result_users->fetch_assoc();
                         $id = $row["rooms_id"];
                         echo "<tr>";
-                        echo "<th scope=row>" . $i . "</th>";
+                        echo "<th>" . $i . "</th>";
                         echo "<td>" . $row["zimmer"] . "</td>";
                         echo "<td>" . $user_room["username"] . "</td>";
                         echo "</tr>";

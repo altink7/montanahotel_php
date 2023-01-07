@@ -45,16 +45,16 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
             <table class='table table-striped'>
                 <thead>
                     <tr>
-                        <th scope='col'>Id</th>
-                        <th scope='col'>Name</th>
-                        <th scope='col'>Password</th>
-                        <th scope='col'>Status</th>
-                        <th scope="col"></th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Password</th>
+                        <th>Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope=row>
+                        <th>
                             <?php echo $id ?> 
                         </th>
                         <td>
@@ -70,7 +70,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                     </tr>
                     <tr>
                         <form method="put" action="useritems.php">
-                            <th scope=row>New</th>
+                            <th>New</th>
                             <td>
                                 <input type="text" name="username" id="usernameInput">
                             </td>
@@ -96,11 +96,11 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                 <thead class="thead-light">
                     <h1>Reservierungen</h1>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Anreisedatum</th>
-                        <th scope="col">Abreisedatum</th>
-                        <th scope="col">Zimmer</th>
-                        <th scope="col">Preis</th>
+                        <th>#</th>
+                        <th>Anreisedatum</th>
+                        <th>Abreisedatum</th>
+                        <th>Zimmer</th>
+                        <th>Preis</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,7 +116,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                     $i = 1;
                     while ($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<th scope=row>" . $i . "</th>";
+                        echo "<th>" . $i . "</th>";
                         echo "<td>" . $row["anreisedatum"] . "</td>";
                         echo "<td>" . $row["abreisedatum"] . "</td>";
                         echo "<td>" . $row["zimmer"] . "</td>";

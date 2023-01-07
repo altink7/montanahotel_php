@@ -56,61 +56,61 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
             ?>
 
                 <tr>
-                    <th scope='col'>Id</th>
+                    <th>Id</th>
                     <td>
                         <?php echo $id; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Anreisedatum</th>
+                    <th>Anreisedatum</th>
                     <td>
                         <?php echo $anreisedatum; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Abreisedatum</th>
+                    <th>Abreisedatum</th>
                     <td>
                         <?php echo $abreisedatum; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Zimmer</th>
+                    <th>Zimmer</th>
                     <td>
                         <?php echo $zimmer; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Frühstück</th>
+                    <th>Frühstück</th>
                     <td>
                         <?php echo $row["fruehstueck"] == 0 ? 'Nein' : 'Ja'; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Parkplatz</th>
+                    <th>Parkplatz</th>
                     <td>
                         <?php echo $row["parkplatz"] == 0 ? 'Nein' : 'Ja'; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Haustier</th>
+                    <th>Haustier</th>
                     <td>
                         <?php echo $row["haustier"] == 0 ? 'Nein' : 'Ja' ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>User</th>
+                    <th>User</th>
                     <td>
                         <?php echo $user_room["username"]; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Zeit</th>
+                    <th>Zeit</th>
                     <td>
                         <?php echo $zeit; ?>
                     </td>
                 </tr>
                 <tr>
-                    <th scope='col'>Preis</th>
+                    <th>Preis</th>
                     <td>
                         <?php echo $preis . " €"; ?>
                     </td>
