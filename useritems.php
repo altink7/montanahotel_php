@@ -85,7 +85,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                             </td>
                                 <br>
                             </td>
-                            <td> <button class="btn btn-primary" type="submit">Bestätigen</button> </td>
+                            <td> <button class="btn btn-light" type="submit">Bestätigen</button> </td>
                         </form>
                     </tr>
                 </tbody>
