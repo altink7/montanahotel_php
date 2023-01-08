@@ -42,7 +42,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
 <div class='Form'>
     <div class='reservierungen'>
         <div class='contact text-center'>
-            <table class='table table-striped'>
+            <table class='table-responsive'>
                 <thead>
                     <tr>
                         <th>Id</th>

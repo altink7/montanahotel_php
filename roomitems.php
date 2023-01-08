@@ -48,74 +48,85 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
 <div class='Form'>
     <div class='reservierungen'>
         <div class='contact text-center'>
-            <h1>Reservierung bearbeiten</h1>
-            <table class='table table-striped'>
+            <h1>Reservierung</h1>
+            <table class='table-responsive'>
+                <br>
                 <?php $sql_users = "SELECT * FROM users WHERE id =" . $user_fk. ";";
             $result_users = mysqli_query($conn, $sql_users);
             $user_room = mysqli_fetch_assoc($result_users);
+                echo "<tr>";
+                echo "<td>" . 'ID' . "</td>";
+                echo "<td>" . $id. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Anreisedatum' . "</td>";
+                echo "<td>" . $anreisedatum. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Abreisedatum' . "</td>";
+                echo "<td>" . $abreisedatum. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Zimmer' . "</td>";
+                echo "<td>" . $zimmer. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Frühstück' . "</td>";
+                echo "<td>". ($row["fruehstueck"]==0?' Nein':' Ja') . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Parkplatz' . "</td>";
+                echo "<td>" . ($row["parkplatz"] == 0 ? 'Nein' : 'Ja') . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Haustier' . "</td>";
+                echo "<td>" . ($row["haustier"] == 0 ? 'Nein' : 'Ja') . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'User' . "</td>";
+                echo "<td>" . $user_room["username"] . "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Zeit' . "</td>";
+                echo "<td>" . $zeit. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td>" . 'Preis' . "</td>";
+                echo "<td>" . $preis. '€'. "</td>";
+                echo "</tr>";
+                echo "<tr>";
+                echo "<td colspan='5'><hr></td>";
+                echo "</tr>";
             ?>
 
-                <tr>
-                    <th>Id</th>
-                    <td>
-                        <?php echo $id; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Anreisedatum</th>
-                    <td>
-                        <?php echo $anreisedatum; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Abreisedatum</th>
-                    <td>
-                        <?php echo $abreisedatum; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Zimmer</th>
-                    <td>
-                        <?php echo $zimmer; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Frühstück</th>
-                    <td>
-                        <?php echo $row["fruehstueck"] == 0 ? 'Nein' : 'Ja'; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Parkplatz</th>
-                    <td>
-                        <?php echo $row["parkplatz"] == 0 ? 'Nein' : 'Ja'; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Haustier</th>
-                    <td>
-                        <?php echo $row["haustier"] == 0 ? 'Nein' : 'Ja' ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>User</th>
-                    <td>
-                        <?php echo $user_room["username"]; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Zeit</th>
-                    <td>
-                        <?php echo $zeit; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Preis</th>
-                    <td>
-                        <?php echo $preis . " €"; ?>
-                    </td>
-                </tr>
-
+               
             </table>
 
 

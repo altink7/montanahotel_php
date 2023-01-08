@@ -192,15 +192,13 @@ body {
 .reservierungen table {
   background-color: #5890b3;
   margin: 0 auto;
-  border: 1px solid;
-  border-collapse: collapse;
-  width: 100%;
+  width: 90%;
 }
 
-.reservierungen table tr:nth-child(odd) {
-  border-top: 5px solid;
-  padding: 5px;
+.reservierungen table tr:first-child {
+  border-top: 2px solid;
 }
+
 
 footer {
   position: relative;

@@ -38,10 +38,10 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
             <h2>
                 <?php echo '<span style="color: white; font-size: 50px;">Welcome ' . $_SESSION['username'] .  '!'. '</span>';
                 ?>
-
+ <hr style="margin: 5%;">
                 <h1>Daten ändern</h1>
             </h2>
-            <table class="thead-light">
+            <table class="table-responsive">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -88,9 +88,9 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
             <div class="errors" style="color:red;">
                 <?php echo $fehler1 . "<br>" . $fehler2; ?>
             </div>
-            <hr style="border:20px solid;">
+            <hr style="margin: 5%;">
 
-            <table class="reservierung-table">
+            <table class="table-responsive">
                 <thead class="thead-light">
                     <h1>Reservierungen</h1>
                     <tr>
@@ -126,6 +126,9 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                         echo "<td> Tiere:" . ($row["haustier"]==0?' Nein':' Ja') . "</td>";
                         echo "<td>" . $row['preis']." €</td>";
                         echo "</tr>";
+                        echo "<tr>";
+                        echo "<td colspan='5'><hr></td>";
+                        echo "</tr>";
                         $i++;
 
                     }
@@ -134,9 +137,8 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                 </tbody>
             </table>
             <?php if ($admin==1) : ?>
-            <hr style="border:20px solid;">
+                <hr style="margin: 5%;">
             <h1 class="kontaktieren">Beiträge verfassen</h1>
-            <hr>
             <form action="news.php" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="picture">Bild hochladen:</label><br>
