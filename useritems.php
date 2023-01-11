@@ -121,13 +121,16 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                         echo "<td>" . $row["abreisedatum"] . "</td>";
                         echo "<td>" . $row["zimmer"] . "</td>";
                         echo "</tr>";
+                    
 
                         echo "<td style=\"font-size:10px;\" scope='row'>".$row['zeit']."</td>";
                         echo "<td> Frühtück:" . ($row["fruehstueck"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Parking:" . ($row["parkplatz"]==0?'Nein':'Ja') . "</td>";
                         echo "<td> Tiere:" . ($row["haustier"]==0?'Nein':'Ja') . "</td>";
                         echo "<td>" . $row['preis']." €</td>";
-
+                        echo "</tr>";
+                        echo "<tr>";
+                        echo "<td colspan='5'><hr></td>";
                         echo "</tr>";
                         $i++;
 
