@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $breakfast = empty($_POST['breakfast'])? 0 : 1;
         $parking = empty($_POST['parking'])? 0 : 1;
         $pets = empty($_POST['pets'])? 0 : 1;
-
+//check if dates are valid
     if (empty($errors)) {
         $date1 = new DateTime($fromdate);
         $date2= new DateTime($todate);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if($interval->format('%R%a')<=0){
             $errors['dateError'] = "Das Abreisedatum muss nach dem Anreisedatum liegen!";
             }
-        //check availability
+//check room availability
         $result = mysqli_query($conn, "SELECT * FROM rooms WHERE zimmer = '" . $zimmer . "' 
         AND (anreisedatum BETWEEN '" . $fromdate . "' AND '" . $todate . "' OR abreisedatum BETWEEN '" . $fromdate . "' AND
          '" . $todate . "')");
@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors['roomError'] = "Das Zimmer ist leider nicht verfügbar!";
         }
         }
+//calculate price
             if(empty($errors)){	
                 if($zimmer == "Mountain Sweet"){
                     $preis = 100;
@@ -81,7 +82,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
-
 <div class="Form">
     <div class="bf-container text-center">
         <div class="bf-body">
