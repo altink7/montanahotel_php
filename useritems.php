@@ -115,6 +115,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                     $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
                     $i = 1;
                     while ($row = mysqli_fetch_assoc($result)) {
+                        //Table Start
                         echo "<tr>";
                         echo "<th>" . $i . "</th>";
                         echo "<td>" . $row["anreisedatum"] . "</td>";
@@ -133,7 +134,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                         echo "<td colspan='5'><hr></td>";
                         echo "</tr>";
                         $i++;
-
+                        //Table End
                     }
 
                      ?>

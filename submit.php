@@ -1,9 +1,17 @@
 <?php
+/*+----------------------------------------------------------------------------------------------------------------+
+ *|here is the used method explained in detail, we use the same way everywhere in the code to make CRUD operations |
+ *+----------------------------------------------------------------------------------------------------------------+*/
+
 session_start();
+// Include the database configuration file
 require_once('dbaccess.php');
 
+
+// Get the submitted form data
 $username=$_POST['username'];
 $useremail=$_POST['email'];
+//password will be saved as a hash 
 $password  =password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 // Connect to the database
@@ -25,6 +33,7 @@ if ($stmt->execute()) {
 // Close the prepared statement
 $stmt->close();
 
+// Close the connection
 $conn->close();
 header('Location: login.php')
 ?>

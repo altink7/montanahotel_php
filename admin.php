@@ -5,6 +5,7 @@ include 'components/nav.php';
 ?>
 
 <div class="Form">
+    <!-- Benutzertabelle -START -->
     <div class="reservierungen">
         <div class="contact text-center">
             <h1>Benutzer</h1>
@@ -43,7 +44,9 @@ include 'components/nav.php';
                 ?>
                 </tbody>
             </table>
+    <!-- Benutzertabelle -END -->
             <hr style="margin: 5%;">
+    <!-- Reservierungen -START -->
             <table class="table-responsive">
                 <thead class="thead-light">
                     <h1>Reservierungen</h1>
@@ -88,6 +91,7 @@ include 'components/nav.php';
 
                 </tbody>
             </table>
+    <!-- Reservierungen -END -->
         </div>
     </div>
 </div>

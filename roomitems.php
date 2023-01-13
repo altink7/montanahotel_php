@@ -54,6 +54,9 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                 <?php $sql_users = "SELECT * FROM users WHERE id =" . $user_fk. ";";
             $result_users = mysqli_query($conn, $sql_users);
             $user_room = mysqli_fetch_assoc($result_users);
+            //we used echo to increase the readability of the code, in able to see the output of the code
+
+            //Table -Start
                 echo "<tr>";
                 echo "<td>" . 'ID' . "</td>";
                 echo "<td>" . $id. "</td>";
@@ -124,6 +127,7 @@ if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
                 echo "<tr>";
                 echo "<td colspan='5'><hr></td>";
                 echo "</tr>";
+            //Table -End
             ?>
 
                
