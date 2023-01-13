@@ -34,6 +34,24 @@ include 'components/nav.php';
                 <div class="col-lg-12">
                     <h5>UID-Nr: ATU 911991</h5>
                 </div>
+                <div class="col-lg-12">
+                    <br>
+                    <h2>Eigentümer</h2>
+                    <div class="julian">
+            <figcaption>
+                <caption>Julian Hoffmann</caption>
+                <img class="julianimg" src="img/julian.jpg" width="230" height="150">
+
+            </figcaption>
+        </div>
+        <hr>
+        <div class="altin">
+            <figcaption>
+                <caption>Altin Kelmendi</caption>
+                <img class="altinimg" src="img/altin.png" width="230" height="150">
+            </figcaption>
+        </div>
+                </div>
             </div>
         </div>
         
