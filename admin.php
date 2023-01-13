@@ -12,7 +12,7 @@ include 'components/nav.php';
                 <thead class="thead-light">
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
+                        <th>Username</th>
                         <th>Password</th>
                         <th>Status</th>
                     </tr>

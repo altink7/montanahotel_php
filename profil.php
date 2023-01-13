@@ -45,7 +45,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Username</th>
                         <th>Password</th>
                     </tr>
                 </thead>
