@@ -31,6 +31,9 @@
    Username: Altin \
    Passwort: montana123
 
+   Für die Datenbank benötigt man folgenden User bei den Rechten:
+   siehe https://github.com/altink7/montanahotel_php/blob/d89577ec7ec797b6c6345d029f9332fa9515aa89/dbaccess.php#L3-L6
+
     
     
 
