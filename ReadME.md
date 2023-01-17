@@ -31,13 +31,12 @@
    Username: Altin \
    Passwort: montana123
 
-   Für die Datenbank benötigt man folgenden User bei den Rechten:
-   siehe https://github.com/altink7/montanahotel_php/blob/d89577ec7ec797b6c6345d029f9332fa9515aa89/dbaccess.php#L3-L6
+   Für die Datenbank benötigt man folgenden User bei den Rechten: \
+  siehe -> dbaccess.php 
 
     
-    
+  
 
+ ER-Modell: \
 
-# ER-Modell:
-
-![DB](https://user-images.githubusercontent.com/105012851/208745139-86449b88-9fee-4f78-80f3-d84d49e41582.png)
+siehe -> ER-Modell.png
