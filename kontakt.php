@@ -6,7 +6,7 @@ include 'components/nav.php';
 
 $errors = array();
 
-
+//Checks if all fields are filled out and posts them
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["name"])) {
     $vorname = $_POST["name"];
@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 }
 ?>
-    <!--Section start-->
+    <!--Contact form-->
     <div class="Form">
     <div class="contact text-center">
         <h1 class="kontaktieren">Kontaktieren Sie uns!</h1><br>
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </div>
-    <!--Section end-->
+    
   
     <?php
     include 'components/footer.php';

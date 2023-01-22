@@ -12,7 +12,7 @@ if ($logoutValue) {
     header('Location: login.php');
 }
 
-//Serverseitige Überprüfung von den eingegebenen Daten START 
+// Checks if all fields are filled out
 $errors = array();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["username"])) {
@@ -25,9 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $errors['passwordError'] = "Password darf nicht leer sein!";
     }
-    //Serverseitige Überprüfung von den eingegebenen Daten END
 
-
+//SQL injection safe login
     if (empty($errors)) {
         $conn = new mysqli($host, $user, $password_db, $database);
         $stmt = mysqli_prepare($conn, "SELECT * FROM users WHERE username = ?");

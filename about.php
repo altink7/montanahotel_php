@@ -5,7 +5,7 @@ include 'components/nav.php';
 include 'components/banner.php';
 ?>
 
-    <!--Section 1 start-->
+    <!--About us-->
     <section>
         <div class="julian">
             <figcaption>
@@ -24,7 +24,7 @@ include 'components/banner.php';
         <br><br><br>
         
     </section>
-    <!--Section 1 end-->
+    
 
     <?php
     include 'components/footer.php';
