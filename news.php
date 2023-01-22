@@ -7,7 +7,7 @@ require_once('dbaccess.php');
 $picture = $title = $text = "";
 $errors = array();
 
-
+//Checks if all fields are filled out and posts them
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_FILES["picture"])) {
         $picture = $_FILES["picture"];

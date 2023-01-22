@@ -8,7 +8,7 @@ $errors = array();
 
 $password_1 = $password_2 = "";
 
-
+//Checks if all fields are filled out
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_POST["vorname"])) {
     $vorname = $_POST["vorname"];
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }else{
         $errors['passwordConfirmedError']="bestätigter Passwort darf nicht leer sein!";
     }
-    
+    // Checks if passwords match
     if($password_1!=$password_2){
         $errors['passwordError']= "Passwörter müssen gleich sein!";
     }
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
+<!--Sign up form-->
     <section>
 
         <img src="Bilder/section.jpeg" alt="">

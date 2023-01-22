@@ -10,7 +10,7 @@ if (!(empty($_GET["username"]) && empty($_GET["password"]))) {
     $sql = "SELECT password FROM users WHERE username = '" . $_SESSION["username"] . "'";
     $result = mysqli_query(new mysqli($host, $user, $password_db, $database), $sql);
     $row = mysqli_fetch_assoc($result);
-
+// Change password
     if(password_verify( $_GET["password"],$row["password"])){
         if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
             $sql = "UPDATE `users` SET `username` ='".$_GET['username']."',
@@ -31,7 +31,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
 
 
 ?>
-
+<!--User information-->
 <div class="Form">
     <div class="reservierungen">
         <div class="contact text-center">
@@ -60,7 +60,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                         </td>
                         <td><a class="btn btn-light" href="?change=true">Daten ändern</a> </td>
                     </tr>
-
+                <!--Change user information-->
                     <?php if ($changeValue): ?>
                     <tr>
                         <form method="put" action="profil.php">
@@ -90,6 +90,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
             </div>
             <hr style="margin: 5%;">
 
+            <!--Reservations-->
             <table class="table-responsive">
                 <thead class="thead-light">
                     <h1>Reservierungen</h1>
@@ -136,6 +137,7 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
                      ?>
                 </tbody>
             </table>
+            <!--Upload news (admin only)-->
             <?php if ($admin==1) : ?>
                 <hr style="margin: 5%;">
             <h1 class="kontaktieren">Beiträge verfassen</h1>
@@ -162,6 +164,6 @@ $changeValue = empty($_GET["change"]) ? false : $_GET["change"];
 
 <?php
 include 'components/footer.php';
-//upload image to db and save as jpg
+
 
 ?>

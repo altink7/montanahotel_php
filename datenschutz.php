@@ -4,7 +4,7 @@ include 'components/head.php';
 include 'components/nav.php';
 
 ?>
-
+<!--Privacy policy-->
 <div class="Form">
 <div class="contact text-center">
     <h1 class="kontaktieren">Datenschutzerklärung</h1>

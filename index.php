@@ -9,7 +9,7 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
  href="'.(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] ?"reservation.php":"login.php").'"><input type="button" value="Buchen"></a> </span>';
  
 ?>
-    <!--Section 1 start-->
+    <!--Rooms-->
 	<section>
 	<br><br><br>
         <div class="row">
@@ -127,9 +127,9 @@ $button = '<span class="col-5 social"><a id="submitButton" class="reservation"
 		</div>
 		<br><br><br>
     
-    <!--Section 1 end-->
     
-    <!--Section food end-->
+    
+    <!--Map-->
     <div class="map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.201109659353!2d73.45431622961873!3d4.18083128723836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b40802cd894794b%3A0x17f4835bfa2b8af6!2sGulhi%20Falhu%2C%20Malediven!5e0!3m2!1sde!2sat!4v1665410683616!5m2!1sde!2sat"

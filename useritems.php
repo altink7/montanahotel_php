@@ -20,7 +20,7 @@ if (!(empty($_SESSION["changeUserid"]))) {
     $status = $row["status"];
     $id = $row["id"];
 }
-
+//Change user data
 $fehler1 = "";
 if (!(empty($_GET["username"]) && empty($_GET["newPassword"]))) {
         if ($_GET["newPassword"] == $_GET["newPasswordConfirmed"]) {
