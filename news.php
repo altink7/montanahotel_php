@@ -28,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         $path = "upload/";
         // Save the resized image to a file
-        if ($file_type == "upload/") {
+        if ($file_type == "image/png") {
             imagepng($im_resized, $path.'resized.png');
+            $imgContent = addslashes(file_get_contents($path.'resized.png'));
         } else if ($file_type == "image/jpeg") {
             imagejpeg($im_resized, $path.'resized.jpg');
+            $imgContent = addslashes(file_get_contents($path.'resized.jpg'));
         }
-        $imgContent = addslashes(file_get_contents($path.'resized.jpg'));
-    
     } else {
         $errors['pictureError'] = "Bild darf nicht leer sein!";
     }
