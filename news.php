@@ -11,7 +11,19 @@ $errors = array();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_FILES["picture"])) {
         $picture = $_FILES["picture"];
-        $imgContent = addslashes(file_get_contents($picture['tmp_name']));
+        $file_type = $picture['type'];
+        switch($file_type){
+            case 'image/jpeg':
+            $news_image = imagecreatefromjpeg($picture);
+            break;
+            case 'image/png':
+            $news_image = imagecreatefrompng($picture);
+            break;
+            default:
+            exit();
+            }
+    $imgContent = addslashes(file_get_contents($picture['tmp_name']));
+    
     } else {
         $errors['pictureError'] = "Bild darf nicht leer sein!";
     }
@@ -59,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div class="row">';
                 echo '<div class="col-lg-3"></div>';
                 echo '<div class="col-lg-6">';
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '" width="150" height="150">';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '>';
                 echo '<h2>' . $row['titel'] . '</h2>';
                 echo '<p>' . $row['beitrag'] . '</p>';
                 echo '<p style="font-size:10px;">' . $row['zeit'] . '</p>';
