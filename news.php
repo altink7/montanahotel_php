@@ -82,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div class="row">';
                 echo '<div class="col-lg-3"></div>';
                 echo '<div class="col-lg-6">';
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '/>';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) .'"/>';
                 echo '<h2>' . $row['titel'] . '</h2>';
                 echo '<p>' . $row['beitrag'] . '</p>';
                 echo '<p style="font-size:10px;">' . $row['zeit'] . '</p>';
