@@ -12,17 +12,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($_FILES["picture"])) {
         $picture = $_FILES["picture"];
         $file_type = $picture['type'];
-        switch($file_type){
-            case 'image/jpeg':
-            $news_image = imagecreatefromjpeg($picture);
-            break;
-            case 'image/png':
-            $news_image = imagecreatefrompng($picture);
-            break;
-            default:
-            exit();
-            }
-    $imgContent = addslashes(file_get_contents($picture['tmp_name']));
+    
+        //image resource
+        if ($file_type == "image/png") {
+            $im = imagecreatefrompng($picture['tmp_name']);
+        } else if ($file_type == "image/jpeg") {
+            $im = imagecreatefromjpeg($picture['tmp_name']);
+        } else {
+            $errors['pictureError'] = "Invalid image format, only PNG and JPEG are allowed";
+        }
+    
+        // Resize the image
+        $im_resized = imagecreatetruecolor(150, 150);
+        imagecopyresized($im_resized, $im, 0, 0, 0, 0, 150, 150, imagesx($im), imagesy($im));
+        
+        $path = "upload/";
+        // Save the resized image to a file
+        if ($file_type == "upload/") {
+            imagepng($im_resized, $path.'resized.png');
+        } else if ($file_type == "image/jpeg") {
+            imagejpeg($im_resized, $path.'resized.jpg');
+        }
+        $imgContent = addslashes(file_get_contents($path.'resized.jpg'));
     
     } else {
         $errors['pictureError'] = "Bild darf nicht leer sein!";
@@ -71,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo '<div class="row">';
                 echo '<div class="col-lg-3"></div>';
                 echo '<div class="col-lg-6">';
-                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '>';
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['bild']) . '/>';
                 echo '<h2>' . $row['titel'] . '</h2>';
                 echo '<p>' . $row['beitrag'] . '</p>';
                 echo '<p style="font-size:10px;">' . $row['zeit'] . '</p>';
