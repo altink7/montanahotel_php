@@ -3,7 +3,8 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 ?>
-<?php if (!isset($admin)):
+<!--Check if user is admin-->
+<?php if (!isset($admin) || (isset($admin) && $admin == 0)):
 include 'components/banner.php';
 endif; ?>
  <?php if (isset($admin) && $admin == 1): ?>
