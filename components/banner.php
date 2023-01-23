@@ -28,7 +28,7 @@
             }elseif($page =='news'){
                 echo('<p>News</p>');
         }else{
-                echo('<p>Willkommen bei Montana!</p>');
+                echo('<p>404 Page not found</p>');
             }
             ?>
             

@@ -3,7 +3,10 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 ?>
- <?php if ($admin == 1): ?>
+<?php if (!isset($admin)):
+include 'components/banner.php';
+endif; ?>
+ <?php if (isset($admin) && $admin == 1): ?>
 <div class="Form">
     <!-- Benutzertabelle -START -->
     <div class="reservierungen">
