@@ -23,8 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     
         // Resize the image
-        $im_resized = imagecreatetruecolor(150, 150);
-        imagecopyresized($im_resized, $im, 0, 0, 0, 0, 150, 150, imagesx($im), imagesy($im));
+        $originalWidth = imagesx($im);
+        $originalHeight = imagesy($im); 
+        $desired_width="300";
+        $desired_height = floor($originalHeight*($desired_width / $originalWidth));
+
+        $im_resized = imagecreatetruecolor($desired_width, $desired_height);
+        imagecopyresized($im_resized, $im, 0, 0, 0, 0, $desired_width, $desired_height, $originalWidth, $originalHeight);
         
         $path = "upload/";
         // Save the resized image to a file
@@ -72,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <div class="Form">
     <div class="contact text-center">
-        <h1 class="kontaktieren">Beiträge</h1>
+        <h1 class="kontaktieren">Beiträge</h1> <br>
         <?php
         $conn = new mysqli($host, $user, $password_db, $database);
         $sql = "SELECT * FROM news order by zeit desc";
