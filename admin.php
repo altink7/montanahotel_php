@@ -3,7 +3,7 @@ $page = basename($_SERVER['PHP_SELF'], '.php');
 include 'components/head.php';
 include 'components/nav.php';
 ?>
-
+ <?php if ($admin == 1): ?>
 <div class="Form">
     <!-- Benutzertabelle -START -->
     <div class="reservierungen">
@@ -95,6 +95,7 @@ include 'components/nav.php';
         </div>
     </div>
 </div>
+<?php endif; ?>
 <?php
 include 'components/footer.php';
 ?>
