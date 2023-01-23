@@ -47,8 +47,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $errors['loginError'] = "Username oder Passwort ist falsch!";
         }
     }
-    $conn->close();
-    $stmt->close();
 }
 
 ?>

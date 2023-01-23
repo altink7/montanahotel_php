@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors['nameError']="Name darf nicht leer sein!";
     }
     if(!empty($_POST["username"])){
-        $nachname = $_POST["user    name"];
+        $nachname = $_POST["username"];
     }else{
         $errors['usernameError']="Username darf nicht leer sein!";
     }
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if(empty($errors)){
-    header('Location: submit.php'); 
+        include('Submit.php');
     }
 }
 ?>
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <img src="Bilder/section.jpeg" alt="">
 
         <div class="anmeldefenster">
-            <form method="post" action="submit.php">
+            <form method="post" action="register.php">
 
 
                 <label for="name">Name:</label><br>
