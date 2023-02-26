@@ -1,5 +1,5 @@
 --
--- Daten für Tabelle `rooms`
+-- Test-Daten für Tabelle `rooms`
 --
 
 INSERT INTO `rooms` (`rooms_id`, `anreisedatum`, `abreisedatum`, `zimmer`, `fruehstueck`, `parkplatz`, `haustier`, `anmerkung`, `user_fk`, `zeit`, `preis`) VALUES
@@ -18,7 +18,7 @@ INSERT INTO `rooms` (`rooms_id`, `anreisedatum`, `abreisedatum`, `zimmer`, `frue
 
 -- --------------------------------------------------------
 --
--- Daten für Tabelle `users`
+-- Test-Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `useremail`, `admin`, `status`) VALUES
